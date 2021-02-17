@@ -180,7 +180,7 @@ export const Price = styled.div`
 
 export const Description = styled.span`
   width: ${px2vw(200, 320)};
-  height: ${px2vw(25, 320)};
+  height: ${px2vw(40, 320)};
 
   font-size: ${px2vw(10, 320)};
   font-style: normal;
@@ -191,7 +191,7 @@ export const Description = styled.span`
 
   @media (min-width: 768px) {
     width: ${px2vw(192, 768)};
-    height: ${px2vw(25, 768)};
+    height: ${px2vw(40, 768)};
 
     font-size: ${px2vw(10, 768)};
     line-height: ${px2vw(12, 768)};
@@ -199,7 +199,7 @@ export const Description = styled.span`
 
   @media (min-width: 1024px) {
     width: ${px2vw(192)};
-    height: ${px2vw(25)};
+    height: ${px2vw(40)};
 
     font-size: ${px2vw(10)};
     line-height: ${px2vw(12)};
