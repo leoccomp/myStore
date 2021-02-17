@@ -1,0 +1,60 @@
+{
+  "products": [
+      {
+        "id": 1,
+        "name": "Apple Watch Series 4 GPS",
+        "short_description": "Caixa de 44 mm ou 40 mm Tela Retina Sempre Ativa.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/apple-watch.jpg",
+        "price": 399
+      },
+      {
+        "id": 2,
+        "name": "JBL Speaker",
+        "short_description": "A JBL GO 2 é uma caixa de som com Bluetooth.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/jbl-speaker.jpg",
+        "price": 299
+      },
+      {
+        "id": 3,
+        "name": "Apple iPhone X 128GB",
+        "short_description": "Redesigned from scratch and completely revised.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/apple-iphone.jpg",
+        "price": 1299
+      },
+      {
+        "id": 4,
+        "name": "Beats Headphones",
+        "short_description": "Fone de ouvido sem fio ideal para o seu ritmo de vida.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/beats-headphones.jpeg",
+        "price": 679
+      },
+      {
+        "id": 5,
+        "name": "Apple Macbook Pro",
+        "short_description": "O novo Mac Pro oferece aos profissionais desempenho.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/apple-macbook-pro.jpg",
+        "price": 2459
+      },
+      {
+        "id": 6,
+        "name": "Apple iPad Pro 64GB",
+        "short_description": "Conheça o novo iPad Pro. Com tela Liquid Retina.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/apple-ipad.jpeg",
+        "price": 699
+      },
+      {
+        "id": 7,
+        "name": "Apple Homepod",
+        "short_description": "O HomePod mini quase não ocupa espaço.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/apple-homepod.jpg",
+        "price": 199
+      },
+      {
+        "id": 8,
+        "name": "JBuds Air Wireless",
+        "short_description": "JLab JBuds Air são os verdadeiros fones de ouvido.",
+        "image": "https://soloed.s3.us-east-1.amazonaws.com/soloed/dev_challenge/imgs/jbuds-air-wireless.jpeg",
+        "price": 249
+      }
+    ]
+  }
