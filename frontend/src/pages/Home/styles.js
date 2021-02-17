@@ -2,28 +2,32 @@ import styled from 'styled-components';
 import px2vw from '../../utils/px2vw';
 
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: ${px2vw(32)};
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: ${px2vw(20, 320)};
+  margin: ${px2vw(32, 320)};
   max-width: 100%;
+  max-height: 100%;
 
-  @media (min-width: 1024px) {
-    flex-wrap: nowrap;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
-  /* position: absolute;
-  width: 938px;
-  height: 601px;
-  left: 247px;
-  top: 217px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: ${px2vw(20, 768)};
+    margin: ${px2vw(12, 768)};
+  }
 
-  @media (max-width: 420px) {
-    width: 100%;
-    height: 100%;
-    left: 20vw;
-    top: 217px;
-  } */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: ${px2vw(20)};
+    margin: ${px2vw(12)};
+  }
 `;
 
 export const Product = styled.div`
@@ -32,11 +36,9 @@ export const Product = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: ${px2vw(218, 320)};
+  width: ${px2vw(238, 320)};
   min-height: ${px2vw(285, 320)};
-  padding: ${px2vw(20)};
-  margin: ${px2vw(20)};
-  height: 100%;
+  margin: ${px2vw(10, 320)};
 
   background-color: ${props => props.bgColor};
 
@@ -45,60 +47,162 @@ export const Product = styled.div`
   border-bottom: 0;
 
   @media (min-width: 768px) {
-    width: ${px2vw(218, 768)};
+    width: ${px2vw(208, 768)};
     min-height: ${px2vw(285, 768)};
-    height: 100%;
+    margin: ${px2vw(10, 768)};
   }
 
   @media (min-width: 1024px) {
-    width: ${px2vw(800)};
+    width: ${px2vw(238)};
     min-height: ${px2vw(300)};
-    height: 100%;
+    margin: ${px2vw(10)};
   }
 `;
 
-// export const ProductList = styled.ul`
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-gap: 20px;
-//   list-style: none;
-
-//   @media (max-width: 400px) {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// `;
-
-// export const Product = styled.li`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: center;
-
-//   width: 218px;
-//   height: 285px;
-
-//   background-color: #ffffff;
-//   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
-//   border-radius: 8px;
-//   border-bottom: 0;
-
-//   @media (max-width: 400px) {
-//     margin-bottom: 20px;
-//   }
-// `;
-
 export const ImageContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 111px;
-  height: 138px;
+  width: ${px2vw(120, 320)};
+  height: ${px2vw(120, 320)};
 
   > img {
-    max-width: 111px;
-    max-height: 138px;
+    max-width: ${px2vw(81, 320)};
+    max-height: ${px2vw(108, 320)};
+  }
+
+  @media (min-width: 768px) {
+    width: ${px2vw(144, 768)};
+    height: ${px2vw(144, 768)};
+
+    > img {
+      max-width: ${px2vw(81, 768)};
+      max-height: ${px2vw(108, 768)};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(160)};
+    height: ${px2vw(160)};
+
+    > img {
+      max-width: ${px2vw(111)};
+      max-height: ${px2vw(138)};
+    }
+  }
+`;
+
+export const DescAndPrice = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: ${px2vw(190, 320)};
+  height: ${px2vw(38, 320)};
+
+  @media (min-width: 768px) {
+    width: ${px2vw(190, 768)};
+    height: ${px2vw(50, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(190)};
+    height: ${px2vw(70)};
+  }
+`;
+
+export const Name = styled.span`
+  width: ${px2vw(110, 320)};
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: ${px2vw(14, 320)};
+  line-height: ${px2vw(19, 320)};
+  text-align: left;
+
+  color: #2c2c2c;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(110, 768)};
+    font-size: ${px2vw(16, 768)};
+    line-height: ${px2vw(19, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(110)};
+    font-size: ${px2vw(16)};
+    line-height: ${px2vw(19)};
+  }
+`;
+
+export const Price = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: ${px2vw(68, 320)};
+  height: ${px2vw(26, 320)};
+
+  background: #373737;
+  border-radius: 5px;
+
+  > span {
+    color: #ffff00;
+    font-size: ${px2vw(15, 320)};
+    font-style: normal;
+    font-weight: 700;
+    line-height: ${px2vw(15, 320)};
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    min-width: ${px2vw(68, 768)};
+    height: ${px2vw(26, 768)};
+
+    > span {
+      font-size: ${px2vw(15, 768)};
+      line-height: ${px2vw(15, 768)};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    min-width: ${px2vw(68)};
+    height: ${px2vw(26)};
+
+    > span {
+      font-size: ${px2vw(15)};
+      line-height: ${px2vw(15)};
+    }
+  }
+`;
+
+export const Description = styled.span`
+  width: ${px2vw(200, 320)};
+  height: ${px2vw(25, 320)};
+
+  font-size: ${px2vw(10, 320)};
+  font-style: normal;
+  font-weight: 400;
+  line-height: ${px2vw(12, 320)};
+  letter-spacing: 0;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(192, 768)};
+    height: ${px2vw(25, 768)};
+
+    font-size: ${px2vw(10, 768)};
+    line-height: ${px2vw(12, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(192)};
+    height: ${px2vw(25)};
+
+    font-size: ${px2vw(10)};
+    line-height: ${px2vw(12)};
   }
 `;
 
@@ -107,8 +211,8 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 32px;
+  width: ${px2vw(238, 320)};
+  height: ${px2vw(32, 320)};
 
   background: #ffff00;
   color: #000000;
@@ -116,61 +220,28 @@ export const Button = styled.button`
   border: none;
 
   > svg {
-    margin-right: 15px;
+    margin-right: ${px2vw(15, 320)};
   }
 
   &:hover {
     opacity: 0.7;
   }
-`;
 
-export const DescAndPrice = styled.div`
-  display: flex;
-  align-items: center;
-`;
+  @media (min-width: 768px) {
+    width: ${px2vw(208, 768)};
+    height: ${px2vw(32, 768)};
 
-export const Name = styled.span`
-  width: 118px;
-  height: 38px;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-
-  color: #2c2c2c;
-`;
-
-export const Price = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 78px;
-  height: 26px;
-
-  background: #373737;
-  border-radius: 5px;
-
-  > span {
-    color: #ffff00;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 15px;
-    letter-spacing: 0px;
-    text-align: left;
+    > svg {
+      margin-right: ${px2vw(15, 768)};
+    }
   }
-`;
 
-export const Description = styled.span`
-  width: 192px;
-  height: 25px;
+  @media (min-width: 1024px) {
+    width: ${px2vw(238)};
+    height: ${px2vw(32)};
 
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 12px;
-  letter-spacing: 0px;
-  text-align: left;
+    > svg {
+      margin-right: ${px2vw(15)};
+    }
+  }
 `;

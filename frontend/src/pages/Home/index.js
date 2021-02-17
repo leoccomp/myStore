@@ -6,6 +6,9 @@ import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
 import * as CartActions from '../../store/modules/cart/actions';
 
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+
 import {
   Container,
   ProductList,
