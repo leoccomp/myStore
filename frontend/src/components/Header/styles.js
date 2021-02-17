@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import px2vw from '../../utils/px2vw';
 
 const animate = keyframes`
   0% {
@@ -18,15 +19,17 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffff00;
+  background-color: #7fff00;
 
-  width: 100vw;
-  height: 101px;
+  width: 100%;
+  height: ${px2vw(91, 320)};
 
-  @media (max-width: 420px) {
-    top: 0;
-    right: 0;
-    left: 0;
+  @media (min-width: 768px) {
+    height: ${px2vw(91, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    height: ${px2vw(91)};
   }
 `;
 
@@ -43,6 +46,15 @@ export const LinkLogo = styled.a`
     line-height: 15px;
     letter-spacing: 0px;
     text-align: left;
+  }
+
+  > strong {
+    font-size: 30px;
+    color: black;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0px;
   }
 
   @media (max-width: 420px) {
@@ -77,7 +89,7 @@ export const Cart = styled.button`
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-    color: #ffff00;
+    color: #7fff00;
   }
 
   @media (max-width: 420px) {
@@ -97,7 +109,7 @@ export const CartMenu = styled.nav`
   height: 100%;
   margin-left: 954px;
 
-  background: #ffff00;
+  background: #7fff00;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
 
   position: absolute;
@@ -301,7 +313,7 @@ export const ButtonRemove = styled.div`
 export const ButtonFinish = styled.button`
   width: 100%;
   height: 97px;
-  color: #ffff00;
+  color: #7fff00;
   border: none;
   background-color: #000000;
 

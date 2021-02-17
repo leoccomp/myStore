@@ -5,7 +5,9 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: ${px2vw(20, 320)};
-  margin: ${px2vw(32, 320)};
+  padding-top: ${px2vw(25, 320)};
+  padding-right: ${px2vw(25, 320)};
+  padding-left: ${px2vw(25, 320)};
   max-width: 100%;
   max-height: 100%;
 
@@ -18,15 +20,19 @@ export const Container = styled.div`
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: ${px2vw(20, 768)};
-    margin: ${px2vw(12, 768)};
+    padding-top: ${px2vw(30, 768)};
+    padding-right: ${px2vw(110, 768)};
+    padding-left: ${px2vw(110, 768)};
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: ${px2vw(20)};
-    margin: ${px2vw(12)};
+    padding-top: ${px2vw(50)};
+    padding-right: ${px2vw(180)};
+    padding-left: ${px2vw(180)};
   }
 `;
 
@@ -148,7 +154,7 @@ export const Price = styled.div`
   border-radius: 5px;
 
   > span {
-    color: #ffff00;
+    color: #7fff00;
     font-size: ${px2vw(15, 320)};
     font-style: normal;
     font-weight: 700;
@@ -214,7 +220,7 @@ export const Button = styled.button`
   width: ${px2vw(238, 320)};
   height: ${px2vw(32, 320)};
 
-  background: #ffff00;
+  background: #7fff00;
   color: #000000;
   border-radius: 0px 0px 8px 8px;
   border: none;

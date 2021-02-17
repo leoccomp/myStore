@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { MdClose } from 'react-icons/md';
+import { MdClose, MdAddShoppingCart } from 'react-icons/md';
+
 import * as CartActions from '../../store/modules/cart/actions';
 
 import {
@@ -57,7 +58,8 @@ export default function Header() {
   return (
     <Container>
       <LinkLogo href="/">
-        <img src={logo} alt="soled_" />
+        {/* <img src={logo} alt="soled_" /> */}
+        <strong>my_</strong>
         <span>store</span>
       </LinkLogo>
       {toggleMenuIsOpened ? (
@@ -65,7 +67,7 @@ export default function Header() {
           <CartHeader>
             <CartHeaderDesc>Carrinho de compras</CartHeaderDesc>
             <ButtonClose>
-              <MdClose size={20} color="#ffff00" onClick={handleToggleMenu} />
+              <MdClose size={20} color="#39ff14" onClick={handleToggleMenu} />
             </ButtonClose>
           </CartHeader>
           <CartItems>
@@ -97,7 +99,7 @@ export default function Header() {
                 <ButtonRemove>
                   <MdClose
                     size={10}
-                    color="#ffff00"
+                    color="#39ff14"
                     onClick={() =>
                       dispatch(CartActions.removeFromCart(item.id))
                     }
@@ -116,7 +118,8 @@ export default function Header() {
         </CartMenu>
       ) : (
         <Cart onClick={handleToggleMenu}>
-          <img src={cartImg} alt="cart" />
+          {/* <img src={cartImg} alt="cart" /> */}
+          <MdAddShoppingCart size={20} color="#39ff14" />
           <span>{cartSize}</span>
         </Cart>
       )}
