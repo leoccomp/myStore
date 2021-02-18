@@ -22,20 +22,12 @@ export const Container = styled.header`
   background-color: #7fff00;
 
   width: 100%;
-  height: ${px2vw(91, 320)};
-
-  @media (min-width: 768px) {
-    height: ${px2vw(91, 768)};
-  }
-
-  @media (min-width: 1024px) {
-    height: ${px2vw(91)};
-  }
+  height: 101px;
 `;
 
 export const LinkLogo = styled.a`
   text-decoration: none;
-  margin-left: 67px;
+  margin-left: ${px2vw(37, 320)};
 
   > span {
     margin-left: 5px;
@@ -57,9 +49,12 @@ export const LinkLogo = styled.a`
     letter-spacing: 0px;
   }
 
-  @media (max-width: 420px) {
-    margin-left: 20px;
-    margin-top: 20px;
+  @media (min-width: 768px) {
+    margin-left: ${px2vw(67, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    margin-left: ${px2vw(67)};
   }
 `;
 
@@ -104,10 +99,9 @@ export const CartMenu = styled.nav`
   justify-content: space-between;
 
   top: 0;
-  bottom: 0;
-  width: 486px;
-  height: 100%;
-  margin-left: 954px;
+  width: ${px2vw(180, 320)};
+  height: 100vh;
+  margin-left: ${px2vw(134, 320)};
 
   background: #7fff00;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
@@ -117,10 +111,14 @@ export const CartMenu = styled.nav`
 
   animation: ${animate} 0.5s;
 
-  @media (max-width: 420px) {
-    width: 18%;
-    height: 50%;
-    margin-left: 30vw;
+  @media (min-width: 768px) {
+    width: ${px2vw(300, 768)};
+    margin-left: ${px2vw(458, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(486)};
+    margin-left: ${px2vw(940)};
   }
 `;
 
@@ -128,25 +126,39 @@ export const CartHeader = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: ${px2vw(180, 320)};
   margin-top: 36px;
 
-  @media (max-width: 420px) {
-    width: 100%;
-    left: 0;
+  @media (min-width: 768px) {
+    width: ${px2vw(300, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(486)};
   }
 `;
 
 export const CartHeaderDesc = styled.strong`
-  width: 180px;
-  height: 56px;
+  width: ${px2vw(100, 320)};
 
-  font-size: 27px;
+  font-size: ${px2vw(12, 320)};
   font-style: normal;
   font-weight: 700;
-  line-height: 33px;
+  line-height: ${px2vw(13, 320)};
   letter-spacing: 0em;
   text-align: left;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(180, 768)};
+    font-size: ${px2vw(20, 768)};
+    line-height: ${px2vw(23, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(190)};
+    font-size: ${px2vw(27)};
+    line-height: ${px2vw(33)};
+  }
 `;
 
 export const ButtonClose = styled.div`
@@ -154,10 +166,32 @@ export const ButtonClose = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 38px;
-  height: 38px;
+  width: ${px2vw(20, 320)};
+  height: ${px2vw(20, 320)};
   border-radius: 50px;
   background-color: #000000;
+
+  svg {
+    font-size: ${px2vw(10, 320)};
+  }
+
+  @media (min-width: 768px) {
+    width: ${px2vw(30, 768)};
+    height: ${px2vw(30, 768)};
+
+    svg {
+      font-size: ${px2vw(15, 768)};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(38)};
+    height: ${px2vw(38)};
+
+    svg {
+      font-size: ${px2vw(20)};
+    }
+  }
 `;
 
 export const CartItems = styled.div`
@@ -166,7 +200,7 @@ export const CartItems = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  height: 70%;
+  height: 60%;
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -174,8 +208,11 @@ export const CartItems = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-  @media (max-width: 420px) {
-    width: 220px;
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1014px) {
   }
 `;
 
@@ -186,38 +223,102 @@ export const CartItem = styled.div`
 
   position: relative;
 
-  width: 379px;
-  min-height: 95px;
-  margin-top: 36px;
+  width: ${px2vw(150, 320)};
+  min-height: ${px2vw(30, 320)};
 
   background: #ffffff;
   box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 
-  > img {
-    height: 57px;
-    width: 46px;
-    margin-left: 23px;
-    border-radius: 0px;
+  :nth-child(1) {
+    margin-top: ${px2vw(7, 320)};
   }
 
-  > span {
-    height: 33px;
-    width: 113px;
-    left: 90px;
-    top: 37px;
+  :nth-child(n + 2) {
+    margin-top: ${px2vw(10, 320)};
+  }
+
+  > img {
+    width: ${px2vw(40, 320)};
+    height: ${px2vw(50, 320)};
+    margin-left: ${px2vw(23, 320)};
+  }
+
+  span {
+    width: ${px2vw(53, 320)};
   }
 
   > strong {
-    height: 17px;
-    width: 62px;
+    width: ${px2vw(24, 320)};
 
-    font-size: 14px;
+    font-size: ${px2vw(6, 320)};
     font-style: normal;
     font-weight: 700;
-    line-height: 17px;
-    letter-spacing: 0px;
     text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    width: ${px2vw(260, 768)};
+    min-height: ${px2vw(55, 768)};
+
+    > img {
+      width: ${px2vw(40, 768)};
+      height: ${px2vw(40, 768)};
+      margin-left: ${px2vw(23, 768)};
+    }
+
+    span {
+      width: ${px2vw(73, 768)};
+    }
+
+    > strong {
+      width: ${px2vw(50, 768)};
+
+      font-size: ${px2vw(12, 768)};
+      font-style: normal;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    :nth-child(1) {
+      margin-top: ${px2vw(20, 768)};
+    }
+
+    :nth-child(n + 2) {
+      margin-top: ${px2vw(15, 768)};
+    }
+  }
+
+  @media (min-width: 1014px) {
+    width: ${px2vw(379)};
+    min-height: ${px2vw(95)};
+
+    > img {
+      width: ${px2vw(60)};
+      height: ${px2vw(60)};
+      margin-left: ${px2vw(23)};
+    }
+
+    span {
+      width: ${px2vw(113)};
+    }
+
+    > strong {
+      width: ${px2vw(70)};
+
+      font-size: ${px2vw(18)};
+      font-style: normal;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    :nth-child(1) {
+      margin-top: ${px2vw(36)};
+    }
+
+    :nth-child(n + 2) {
+      margin-top: ${px2vw(28)};
+    }
   }
 `;
 
@@ -226,26 +327,33 @@ export const ImageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 46px;
-  height: 57px;
+  width: ${px2vw(20, 320)};
+  height: ${px2vw(31, 320)};
 
   > img {
-    max-width: 46px;
-    max-height: 57px;
+    max-width: ${px2vw(20, 320)};
+    max-height: ${px2vw(31, 320)};
   }
-`;
 
-export const TotalBuy = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+  @media (min-width: 768px) {
+    width: ${px2vw(36, 768)};
+    height: ${px2vw(47, 768)};
 
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 15px;
-  letter-spacing: 0px;
-  text-align: left;
+    > img {
+      max-width: ${px2vw(36, 768)};
+      max-height: ${px2vw(47, 768)};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(46)};
+    height: ${px2vw(57)};
+
+    > img {
+      max-width: ${px2vw(46)};
+      max-height: ${px2vw(57)};
+    }
+  }
 `;
 
 export const ButtonQuantity = styled.div`
@@ -253,7 +361,7 @@ export const ButtonQuantity = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 35px;
+  height: ${px2vw(35, 320)};
 
   > div {
     display: flex;
@@ -291,6 +399,27 @@ export const ButtonQuantity = styled.div`
       font-size: 12px;
     }
   }
+
+  @media (min-width: 768px) {
+    height: ${px2vw(35, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    height: ${px2vw(35)};
+  }
+`;
+
+export const TotalBuy = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: left;
 `;
 
 export const ButtonRemove = styled.div`

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { MdClose, MdAddShoppingCart } from 'react-icons/md';
+import px2vw from '../../utils/px2vw';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
@@ -21,8 +21,6 @@ import {
   ButtonRemove,
   ButtonFinish
 } from './styles';
-import logo from '../../assets/images/logo.svg';
-import cartImg from '../../assets/images/cart.svg';
 
 export default function Header() {
   const cartSize = useSelector(state => state.cart.length);
@@ -58,16 +56,15 @@ export default function Header() {
   return (
     <Container>
       <LinkLogo href="/">
-        {/* <img src={logo} alt="soled_" /> */}
         <strong>my_</strong>
         <span>store</span>
       </LinkLogo>
       {toggleMenuIsOpened ? (
         <CartMenu>
           <CartHeader>
-            <CartHeaderDesc>Carrinho de compras</CartHeaderDesc>
+            <CartHeaderDesc>Meu carrinho</CartHeaderDesc>
             <ButtonClose>
-              <MdClose size={20} color="#39ff14" onClick={handleToggleMenu} />
+              <MdClose color="#39ff14" onClick={handleToggleMenu} />
             </ButtonClose>
           </CartHeader>
           <CartItems>
