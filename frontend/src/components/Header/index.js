@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdClose, MdAddShoppingCart } from 'react-icons/md';
-import px2vw from '../../utils/px2vw';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
 import {
   Container,
   LinkLogo,
+  Search,
   Cart,
   CartMenu,
   CartHeader,
@@ -61,6 +61,11 @@ export default function Header() {
         <strong>my_</strong>
         <span>store</span>
       </LinkLogo>
+      {/* <Search type="text" placeholder="Search.." /> */}
+      <form action="">
+        <input type="search" placeholder="Search..." />
+        <i className="fa fa-search" />
+      </form>
       {toggleMenuIsOpened ? (
         <CartMenu>
           <CartHeader>
@@ -114,8 +119,7 @@ export default function Header() {
         </CartMenu>
       ) : (
         <Cart onClick={handleToggleMenu}>
-          {/* <img src={cartImg} alt="cart" /> */}
-          <MdAddShoppingCart size={20} color="#39ff14" />
+          <MdAddShoppingCart color="#39ff14" />
           <span>{cartSize}</span>
         </Cart>
       )}

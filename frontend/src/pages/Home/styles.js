@@ -27,6 +27,43 @@ export const Container = styled.div`
     display: none;
   }
 
+  nav input {
+    display: none;
+  }
+
+  nav input:checked ~ label span:last-child {
+    display: none;
+  }
+
+  nav input:not(:checked) ~ label span:first-child {
+    display: none;
+    width: 100px;
+  }
+
+  nav {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    min-width: 80px;
+    min-height: 80px;
+    overflow: hidden;
+  }
+
+  nav ul {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    transition: width 0.5s, height 0.5s;
+    list-style: none;
+  }
+
+  nav input:checked ~ ul {
+    width: 400px;
+    height: 90px;
+  }
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: ${px2vw(20, 768)};

@@ -23,11 +23,111 @@ export const Container = styled.header`
 
   width: 100%;
   height: 101px;
+
+  form {
+    left: 50%;
+    transform: translate(-5%, -5%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: ${px2vw(5, 320)};
+
+    @media (min-width: 768px) {
+      padding: ${px2vw(5, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      padding: ${px2vw(5)};
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+  }
+
+  .fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: ${px2vw(30, 320)};
+    height: ${px2vw(30, 320)};
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: #000000;
+    color: #7fff00;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+
+    @media (min-width: 768px) {
+      width: ${px2vw(42.5, 768)};
+      height: ${px2vw(42.5, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      width: ${px2vw(42.5)};
+      height: ${px2vw(42.5)};
+    }
+  }
+
+  .fa-search {
+    font-size: ${px2vw(12, 320)};
+
+    @media (min-width: 768px) {
+      font-size: ${px2vw(20, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      font-size: ${px2vw(22)};
+    }
+  }
+
+  form:hover {
+    width: ${px2vw(100, 320)};
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      width: ${px2vw(280, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      width: ${px2vw(400)};
+    }
+  }
+
+  form:hover input {
+    display: block;
+  }
+
+  form:hover .fa {
+    background: #7fff00;
+    color: black;
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1024px) {
+  }
 `;
 
 export const LinkLogo = styled.a`
   text-decoration: none;
-  margin-left: ${px2vw(37, 320)};
+  margin-left: ${px2vw(10, 320)};
 
   > span {
     margin-left: 5px;
@@ -58,22 +158,28 @@ export const LinkLogo = styled.a`
   }
 `;
 
-export const Cart = styled.button`
+export const Search = styled.input`
+  float: right;
+  padding: 6px;
   border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+`;
 
+export const Cart = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
   background-color: #000000;
-  margin-right: 88px;
+  margin-right: ${px2vw(10, 320)};
   border-radius: 8px;
+  border: none;
 
-  width: 90px;
-  height: 45px;
-  left: 1262px;
-  top: 29px;
+  width: ${px2vw(60, 320)};
+  height: ${px2vw(30, 320)};
 
   &:hover {
     opacity: 0.7;
@@ -82,13 +188,43 @@ export const Cart = styled.button`
   span {
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: ${px2vw(10, 320)};
     line-height: 22px;
     color: #7fff00;
+
+    @media (min-width: 768px) {
+      font-size: ${px2vw(18, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      font-size: ${px2vw(18)};
+    }
   }
 
-  @media (max-width: 420px) {
-    margin-right: 20px;
+  svg {
+    font-size: ${px2vw(10, 320)};
+
+    @media (min-width: 768px) {
+      font-size: ${px2vw(18, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      font-size: ${px2vw(18)};
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-right: ${px2vw(88, 768)};
+
+    width: ${px2vw(90, 768)};
+    height: ${px2vw(45, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    margin-right: ${px2vw(88)};
+
+    width: ${px2vw(90)};
+    height: ${px2vw(45)};
   }
 `;
 
