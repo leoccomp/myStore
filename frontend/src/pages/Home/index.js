@@ -10,6 +10,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 import {
+  Section,
   Container,
   Product,
   DescAndPrice,
@@ -45,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <Section>
       <Header />
       <Container>
         {products.map(product => (
@@ -69,6 +70,7 @@ export default function Home() {
           </Product>
         ))}
       </Container>
-    </>
+      <Footer />
+    </Section>
   );
 }

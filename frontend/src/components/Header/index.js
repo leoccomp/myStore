@@ -18,6 +18,8 @@ import {
   ImageContainer,
   TotalBuy,
   ButtonQuantity,
+  ButtonDecrement,
+  ButtonIncrement,
   ButtonRemove,
   ButtonFinish
 } from './styles';
@@ -77,25 +79,22 @@ export default function Header() {
                 <ButtonQuantity>
                   <small>Qtd:</small>
                   <div>
+                    <ButtonDecrement onClick={() => decrement(item)}>
+                      -
+                    </ButtonDecrement>
                     <input
-                      className="number-btn-left"
-                      value="-"
-                      type="button"
-                      onClick={() => decrement(item)}
+                      type="text"
+                      className="number-value"
+                      value={item.amount}
                     />
-                    <span className="number-value">{item.amount}</span>
-                    <input
-                      className="number-btn-right"
-                      value="+"
-                      type="button"
-                      onClick={() => increment(item)}
-                    />
+                    <ButtonIncrement onClick={() => increment(item)}>
+                      +
+                    </ButtonIncrement>
                   </div>
                 </ButtonQuantity>
                 <strong>{`R$${item.subtotal}`}</strong>
                 <ButtonRemove>
                   <MdClose
-                    size={10}
                     color="#39ff14"
                     onClick={() =>
                       dispatch(CartActions.removeFromCart(item.id))

@@ -5,7 +5,7 @@ import { Container, Span } from './styles';
 export default function Footer() {
   return (
     <Container>
-      <Span>soloed_ © Todos os direitos reservados</Span>
+      <Span>my_store 2021 © Todos os direitos reservados</Span>
     </Container>
   );
 }

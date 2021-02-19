@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 import px2vw from '../../utils/px2vw';
 
+export const Section = styled.body`
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: ${px2vw(20, 320)};
-  padding-top: ${px2vw(25, 320)};
+  padding-top: ${px2vw(15, 320)};
   padding-right: ${px2vw(25, 320)};
   padding-left: ${px2vw(25, 320)};
   max-width: 100%;
-  max-height: 100%;
+  max-height: 100vh;
+
+  flex: 1;
 
   overflow-y: scroll;
   scrollbar-width: none;
@@ -29,8 +37,8 @@ export const Container = styled.div`
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: ${px2vw(20)};
-    padding-top: ${px2vw(50)};
+    grid-gap: ${px2vw(10)};
+    padding-top: ${px2vw(20)};
     padding-right: ${px2vw(180)};
     padding-left: ${px2vw(180)};
   }

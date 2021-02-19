@@ -1,23 +1,30 @@
 import styled from 'styled-components';
+import px2vw from '../../utils/px2vw';
 
 export const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eeeeee;
+  background-color: #7fff00;
 
-  position: absolute;
-  width: 1440px;
   height: 34px;
-  margin-top: 990px;
+  margin-top: 30px;
 `;
 
 export const Span = styled.span`
-  font-size: 12px;
+  font-size: ${px2vw(8, 320)};
   font-style: normal;
   font-weight: 400;
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
   color: #000000;
+
+  @media (min-width: 768px) {
+    font-size: ${px2vw(12, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    font-size: ${px2vw(12)};
+  }
 `;

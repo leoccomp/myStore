@@ -100,8 +100,8 @@ export const CartMenu = styled.nav`
 
   top: 0;
   width: ${px2vw(180, 320)};
-  height: 100vh;
-  margin-left: ${px2vw(134, 320)};
+  height: calc(100vh - 34px);
+  margin-left: ${px2vw(140, 320)};
 
   background: #7fff00;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
@@ -113,12 +113,12 @@ export const CartMenu = styled.nav`
 
   @media (min-width: 768px) {
     width: ${px2vw(300, 768)};
-    margin-left: ${px2vw(458, 768)};
+    margin-left: ${px2vw(468, 768)};
   }
 
   @media (min-width: 1024px) {
     width: ${px2vw(486)};
-    margin-left: ${px2vw(940)};
+    margin-left: ${px2vw(953)};
   }
 `;
 
@@ -230,10 +230,6 @@ export const CartItem = styled.div`
   box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 
-  :nth-child(1) {
-    margin-top: ${px2vw(7, 320)};
-  }
-
   :nth-child(n + 2) {
     margin-top: ${px2vw(10, 320)};
   }
@@ -280,10 +276,6 @@ export const CartItem = styled.div`
       text-align: left;
     }
 
-    :nth-child(1) {
-      margin-top: ${px2vw(20, 768)};
-    }
-
     :nth-child(n + 2) {
       margin-top: ${px2vw(15, 768)};
     }
@@ -310,10 +302,6 @@ export const CartItem = styled.div`
       font-style: normal;
       font-weight: 700;
       text-align: left;
-    }
-
-    :nth-child(1) {
-      margin-top: ${px2vw(36)};
     }
 
     :nth-child(n + 2) {
@@ -361,51 +349,103 @@ export const ButtonQuantity = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: ${px2vw(35, 320)};
+  height: ${px2vw(15, 320)};
+
+  > small {
+    font-size: ${px2vw(4, 320)};
+  }
 
   > div {
     display: flex;
 
-    > small {
-      font-size: 10px;
-    }
-
-    .number-btn-left {
-      cursor: pointer;
-      width: 20px;
-      height: 19px;
-      border-radius: 4px 0 0 4px;
-      background: none;
-      border: 1px solid #ddd;
-      border-right: 0;
-    }
-
-    .number-btn-right {
-      cursor: pointer;
-      width: 20px;
-      height: 19px;
-      border-radius: 0 4px 4px 0;
-      background: none;
-      border: 1px solid #ddd;
-      border-left: 0;
-    }
-
     .number-value {
-      width: 30px;
-      height: 19px;
+      width: ${px2vw(10, 320)};
+      height: ${px2vw(9, 320)};
       border: 1px solid #ddd;
       color: #666;
       text-align: center;
-      font-size: 12px;
+      font-size: ${px2vw(4, 320)};
+
+      @media (min-width: 768px) {
+        width: ${px2vw(20, 768)};
+        height: ${px2vw(19, 768)};
+        font-size: ${px2vw(8, 768)};
+      }
+
+      @media (min-width: 1024px) {
+        width: ${px2vw(30)};
+        height: ${px2vw(29)};
+        font-size: ${px2vw(11)};
+      }
     }
   }
 
   @media (min-width: 768px) {
-    height: ${px2vw(35, 768)};
+    height: ${px2vw(30, 768)};
+
+    > small {
+      font-size: ${px2vw(8, 768)};
+    }
   }
 
   @media (min-width: 1024px) {
-    height: ${px2vw(35)};
+    height: ${px2vw(45)};
+
+    > small {
+      font-size: ${px2vw(11)};
+    }
+  }
+`;
+
+export const ButtonDecrement = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: ${px2vw(10, 320)};
+  height: ${px2vw(9, 320)};
+  font-size: ${px2vw(6, 320)};
+  border-radius: 4px 0 0 4px;
+  background: none;
+  border: 1px solid #ddd;
+  border-right: 0;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(20, 768)};
+    height: ${px2vw(19, 768)};
+    font-size: ${px2vw(8, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(30)};
+    height: ${px2vw(29)};
+    font-size: ${px2vw(18)};
+  }
+`;
+
+export const ButtonIncrement = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: ${px2vw(10, 320)};
+  height: ${px2vw(9, 320)};
+  font-size: ${px2vw(6, 320)};
+  border-radius: 0 4px 4px 0;
+  background: none;
+  border: 1px solid #ddd;
+  border-left: 0;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(20, 768)};
+    height: ${px2vw(19, 768)};
+    font-size: ${px2vw(8, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(30)};
+    height: ${px2vw(29)};
+    font-size: ${px2vw(18)};
   }
 `;
 
@@ -414,12 +454,22 @@ export const TotalBuy = styled.div`
   justify-content: space-around;
   width: 100%;
 
-  font-size: 28px;
+  font-size: ${px2vw(15, 320)};
   font-style: normal;
   font-weight: 700;
-  line-height: 15px;
+  line-height: ${px2vw(15, 320)};
   letter-spacing: 0px;
   text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: ${px2vw(20, 768)};
+    line-height: ${px2vw(15, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    font-size: ${px2vw(28)};
+    line-height: ${px2vw(15)};
+  }
 `;
 
 export const ButtonRemove = styled.div`
@@ -433,15 +483,29 @@ export const ButtonRemove = styled.div`
 
   cursor: pointer;
 
-  width: 18px;
-  height: 18px;
+  width: ${px2vw(8, 320)};
+  height: ${px2vw(8, 320)};
   border-radius: 50px;
   background-color: #000000;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(15, 768)};
+    height: ${px2vw(15, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(23)};
+    height: ${px2vw(23)};
+  }
 `;
 
 export const ButtonFinish = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
-  height: 97px;
+  height: 12vh;
   color: #7fff00;
   border: none;
   background-color: #000000;
@@ -451,13 +515,21 @@ export const ButtonFinish = styled.button`
   }
 
   > span {
-    width: 249px;
-    height: 15px;
-    font-size: 28px;
+    font-size: ${px2vw(12, 320)};
     font-style: normal;
     font-weight: 700;
-    line-height: 15px;
+    line-height: ${px2vw(15, 320)};
     letter-spacing: 0px;
     text-align: left;
+
+    @media (min-width: 768px) {
+      font-size: ${px2vw(20, 768)};
+      line-height: ${px2vw(15, 768)};
+    }
+
+    @media (min-width: 1024px) {
+      font-size: ${px2vw(28)};
+      line-height: ${px2vw(15)};
+    }
   }
 `;
