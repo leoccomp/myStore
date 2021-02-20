@@ -61,9 +61,8 @@ export default function Header() {
         <strong>my_</strong>
         <span>store</span>
       </LinkLogo>
-      {/* <Search type="text" placeholder="Search.." /> */}
       <form action="">
-        <input type="search" placeholder="Search..." />
+        <input type="search" placeholder="Busca rápida..." />
         <i className="fa fa-search" />
       </form>
       {toggleMenuIsOpened ? (

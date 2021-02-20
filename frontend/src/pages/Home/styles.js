@@ -27,43 +27,6 @@ export const Container = styled.div`
     display: none;
   }
 
-  nav input {
-    display: none;
-  }
-
-  nav input:checked ~ label span:last-child {
-    display: none;
-  }
-
-  nav input:not(:checked) ~ label span:first-child {
-    display: none;
-    width: 100px;
-  }
-
-  nav {
-    position: fixed;
-    top: 120px;
-    left: 20px;
-    min-width: 80px;
-    min-height: 80px;
-    overflow: hidden;
-  }
-
-  nav ul {
-    overflow: hidden;
-    width: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    transition: width 0.5s, height 0.5s;
-    list-style: none;
-  }
-
-  nav input:checked ~ ul {
-    width: 400px;
-    height: 90px;
-  }
-
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: ${px2vw(20, 768)};
@@ -77,7 +40,51 @@ export const Container = styled.div`
     grid-gap: ${px2vw(10)};
     padding-top: ${px2vw(20)};
     padding-right: ${px2vw(180)};
-    padding-left: ${px2vw(180)};
+    padding-left: ${px2vw(290)};
+  }
+`;
+
+export const Filters = styled.nav`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 10px;
+
+  position: fixed;
+  left: 20px;
+
+  background-color: ${props => props.bgColor};
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+  border-radius: 8px;
+
+  input {
+    width: 220px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(238)};
+    min-height: ${px2vw(520)};
+    margin: ${px2vw(10)};
+  }
+`;
+
+export const CheckBox = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 220px;
+
+  label {
+    float: left;
+    margin: 10px 10px;
+  }
+
+  > input {
+    margin: 5px 0px;
+    width: auto;
   }
 `;
 
