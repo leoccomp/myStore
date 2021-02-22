@@ -99,7 +99,7 @@ export default function Header() {
                 <strong>{`R$${item.subtotal}`}</strong>
                 <ButtonRemove>
                   <MdClose
-                    color="#39ff14"
+                    color="#7fff00"
                     onClick={() =>
                       dispatch(CartActions.removeFromCart(item.id))
                     }

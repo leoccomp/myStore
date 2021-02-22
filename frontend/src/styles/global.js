@@ -14,6 +14,12 @@ export default createGlobalStyle`
 
   :root {
     font-size: ${px2vw(24)};
+    --white: #fff;
+    --black: #000000;
+    --gray: #666666;
+    --dark-gray: #2c2c2c;
+    --light-gray: #dddddd;
+    --green: #7fff00;
 
     @media (min-width: 768px) {
       font-size: ${px2vw(18)};

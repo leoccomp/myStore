@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 import Skeleton from 'react-loading-skeleton';
+import ReactSlider from 'rc-slider';
 import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
 import * as CartActions from '../../store/modules/cart/actions';
@@ -22,9 +23,14 @@ import {
   Button,
   ImageContainer
 } from './styles';
+import 'rc-slider/assets/index.css';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+  const [min, setMin] = useState(100);
+  const [max, setMax] = useState(1000);
+  const step = 10;
+  const values = [100, 1000];
 
   const dispatch = useDispatch();
 
@@ -47,6 +53,8 @@ export default function Home() {
     dispatch(CartActions.addToCartRequest(id));
   }
 
+  function handleChangeSlider() {}
+
   return (
     <Section>
       <Header />
@@ -58,9 +66,19 @@ export default function Home() {
             <input type="checkbox" id="scales" name="scales" />
             <label htmlFor="scales">Em Estoque</label>
           </CheckBox>
+          <strike>Preço</strike>
+          <ReactSlider.Range
+            min={min}
+            max={max}
+            value={values}
+            allowCross={false}
+            pushable
+            step={step}
+            onChange={handleChangeSlider}
+          />
         </Filters>
         {products.map(product => (
-          <Product key={product.id} bgColor="#ffffff">
+          <Product key={product.id}>
             <ImageContainer>
               <img src={product.image} alt={product.title} />
             </ImageContainer>

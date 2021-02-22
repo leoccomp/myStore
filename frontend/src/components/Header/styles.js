@@ -19,7 +19,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #7fff00;
+  background-color: var(--green);
 
   width: 100%;
   height: 101px;
@@ -67,8 +67,8 @@ export const Container = styled.header`
     top: 0;
     right: 0;
     border-radius: 50%;
-    background-color: #000000;
-    color: #7fff00;
+    background-color: var(--black);
+    color: var(--green);
     text-align: center;
     font-size: 1.2em;
     transition: all 1s;
@@ -114,7 +114,7 @@ export const Container = styled.header`
   }
 
   form:hover .fa {
-    background: #7fff00;
+    background: var(--green);
     color: black;
   }
 
@@ -173,7 +173,7 @@ export const Cart = styled.button`
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
-  background-color: #000000;
+  background-color: var(--black);
   margin-right: ${px2vw(10, 320)};
   border-radius: 8px;
   border: none;
@@ -190,7 +190,7 @@ export const Cart = styled.button`
     font-weight: bold;
     font-size: ${px2vw(10, 320)};
     line-height: 22px;
-    color: #7fff00;
+    color: var(--green);
 
     @media (min-width: 768px) {
       font-size: ${px2vw(18, 768)};
@@ -239,7 +239,7 @@ export const CartMenu = styled.nav`
   height: calc(100vh - 34px);
   margin-left: ${px2vw(140, 320)};
 
-  background: #7fff00;
+  background: var(--green);
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
 
   position: absolute;
@@ -305,7 +305,7 @@ export const ButtonClose = styled.div`
   width: ${px2vw(20, 320)};
   height: ${px2vw(20, 320)};
   border-radius: 50px;
-  background-color: #000000;
+  background-color: var(--black);
 
   svg {
     font-size: ${px2vw(10, 320)};
@@ -362,7 +362,7 @@ export const CartItem = styled.div`
   width: ${px2vw(150, 320)};
   min-height: ${px2vw(30, 320)};
 
-  background: #ffffff;
+  background: var(--white);
   box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 
@@ -497,8 +497,8 @@ export const ButtonQuantity = styled.div`
     .number-value {
       width: ${px2vw(10, 320)};
       height: ${px2vw(9, 320)};
-      border: 1px solid #ddd;
-      color: #666;
+      border: 1px solid var(--light-gray);
+      color: var(--gray);
       text-align: center;
       font-size: ${px2vw(4, 320)};
 
@@ -543,7 +543,7 @@ export const ButtonDecrement = styled.button`
   font-size: ${px2vw(6, 320)};
   border-radius: 4px 0 0 4px;
   background: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--light-gray);
   border-right: 0;
 
   @media (min-width: 768px) {
@@ -569,7 +569,7 @@ export const ButtonIncrement = styled.button`
   font-size: ${px2vw(6, 320)};
   border-radius: 0 4px 4px 0;
   background: none;
-  border: 1px solid #ddd;
+  border: 1px solid var(--light-gray);
   border-left: 0;
 
   @media (min-width: 768px) {
@@ -622,7 +622,7 @@ export const ButtonRemove = styled.div`
   width: ${px2vw(8, 320)};
   height: ${px2vw(8, 320)};
   border-radius: 50px;
-  background-color: #000000;
+  background-color: var(--black);
 
   @media (min-width: 768px) {
     width: ${px2vw(15, 768)};
@@ -642,9 +642,9 @@ export const ButtonFinish = styled.button`
 
   width: 100%;
   height: 12vh;
-  color: #7fff00;
+  color: var(--green);
   border: none;
-  background-color: #000000;
+  background-color: var(--black);
 
   &:hover {
     opacity: 0.7;

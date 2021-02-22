@@ -55,13 +55,22 @@ export const Filters = styled.nav`
   position: fixed;
   left: 20px;
 
-  background-color: ${props => props.bgColor};
+  background-color: var(--white);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
   border-radius: 8px;
 
   input {
     width: 220px;
     margin-bottom: 10px;
+
+    :focus {
+      border-color: inherit;
+      -webkit-box-shadow: none;
+      outline: none;
+      box-shadow: 0 0 0 3px var(--green);
+      padding: 8px;
+      border-radius: 4px;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -98,7 +107,7 @@ export const Product = styled.div`
   min-height: ${px2vw(285, 320)};
   margin: ${px2vw(10, 320)};
 
-  background-color: ${props => props.bgColor};
+  background-color: var(--white);
 
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
   border-radius: 8px;
@@ -179,7 +188,7 @@ export const Name = styled.span`
   line-height: ${px2vw(19, 320)};
   text-align: left;
 
-  color: #2c2c2c;
+  color: var(--dark-gray);
 
   @media (min-width: 768px) {
     width: ${px2vw(110, 768)};
@@ -206,7 +215,7 @@ export const Price = styled.div`
   border-radius: 5px;
 
   > span {
-    color: #7fff00;
+    color: var(--green);
     font-size: ${px2vw(15, 320)};
     font-style: normal;
     font-weight: 700;
@@ -272,8 +281,8 @@ export const Button = styled.button`
   width: ${px2vw(238, 320)};
   height: ${px2vw(32, 320)};
 
-  background: #7fff00;
-  color: #000000;
+  background: var(--green);
+  color: var(--black);
   border-radius: 0px 0px 8px 8px;
   border: none;
 

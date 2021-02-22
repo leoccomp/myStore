@@ -5,7 +5,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #7fff00;
+  background-color: var(--green);
 
   height: 34px;
   margin-top: 30px;
@@ -18,7 +18,7 @@ export const Span = styled.span`
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
-  color: #000000;
+  color: var(--black);
 
   @media (min-width: 768px) {
     font-size: ${px2vw(12, 768)};
