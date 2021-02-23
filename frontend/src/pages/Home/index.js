@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 import Skeleton from 'react-loading-skeleton';
-import ReactSlider from 'rc-slider';
+import Slider from 'rc-slider';
 import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
 import * as CartActions from '../../store/modules/cart/actions';
+
+import 'rc-slider/assets/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -15,6 +18,7 @@ import {
   Container,
   Filters,
   CheckBox,
+  PriceRange,
   Product,
   DescAndPrice,
   Name,
@@ -23,12 +27,14 @@ import {
   Button,
   ImageContainer
 } from './styles';
-import 'rc-slider/assets/index.css';
+
+const { createSliderWithTooltip } = Slider;
+const Range = createSliderWithTooltip(Slider.Range);
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [min, setMin] = useState(100);
-  const [max, setMax] = useState(1000);
+  const [max, setMax] = useState(2000);
   const step = 10;
   const values = [100, 1000];
 
@@ -66,16 +72,25 @@ export default function Home() {
             <input type="checkbox" id="scales" name="scales" />
             <label htmlFor="scales">Em Estoque</label>
           </CheckBox>
-          <strike>Preço</strike>
-          <ReactSlider.Range
-            min={min}
-            max={max}
-            value={values}
-            allowCross={false}
-            pushable
-            step={step}
-            onChange={handleChangeSlider}
-          />
+          <PriceRange>
+            <strong>Faixa de preço</strong>
+            <Range
+              marks={{
+                100: `R$ ${min}`,
+                2000: `R$ ${max}`
+              }}
+              min={min}
+              max={max}
+              step={50}
+              defaultValue={[100, 1000]}
+              tipFormatter={value => `R$${value}`}
+              tipProps={{
+                placement: 'top',
+                visible: true
+              }}
+              className="sliderArea"
+            />
+          </PriceRange>
         </Filters>
         {products.map(product => (
           <Product key={product.id}>

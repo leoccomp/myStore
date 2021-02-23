@@ -80,6 +80,54 @@ export const Filters = styled.nav`
   }
 `;
 
+export const PriceRange = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 200px;
+
+  .sliderArea {
+    width: 160px;
+    margin-top: 50px;
+  }
+
+  .rc-slider-rail {
+    height: 5px;
+  }
+
+  .rc-slider-track {
+    background-color: var(--green);
+    height: 5px;
+  }
+
+  .rc-slider-dot {
+    background-color: var(--green);
+  }
+
+  .rc-slider-handle {
+    background-color: var(--green);
+  }
+
+  .rc-slider-mark-text-active {
+    color: var(--green);
+  }
+
+  .rc-slider-tooltip-inner {
+    min-width: ${px2vw(70)};
+    height: ${px2vw(26)};
+
+    background: var(--medium-gray);
+    color: var(--green);
+    font-size: ${px2vw(15)};
+    font-style: normal;
+    font-weight: 700;
+    line-height: ${px2vw(15)};
+    letter-spacing: 0px;
+    text-align: center;
+  }
+`;
+
 export const CheckBox = styled.div`
   display: flex;
   align-items: center;
@@ -211,7 +259,7 @@ export const Price = styled.div`
   min-width: ${px2vw(68, 320)};
   height: ${px2vw(26, 320)};
 
-  background: #373737;
+  background: var(--medium-gray);
   border-radius: 5px;
 
   > span {
