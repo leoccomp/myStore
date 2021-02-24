@@ -61,15 +61,16 @@ export const Filters = styled.nav`
 
   input {
     width: 220px;
+    height: 40px;
     margin-bottom: 10px;
 
     :focus {
       border-color: inherit;
       -webkit-box-shadow: none;
       outline: none;
-      box-shadow: 0 0 0 3px var(--green);
+      box-shadow: 0 0 0 1px var(--green);
       padding: 8px;
-      border-radius: 4px;
+      border-radius: 8px;
     }
   }
 
@@ -84,12 +85,96 @@ export const PriceRange = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   width: 200px;
+  height: 30vh;
+
+  .form-field {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: #99a3ba;
+    border: 1px solid var(--green);
+    background: #fff;
+    transition: border 0.3s ease;
+
+    &::placeholder {
+      color: var(--black);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+  }
+
+  .form-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+
+    & > span,
+    .form-field {
+      white-space: nowrap;
+      display: block;
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+
+      &:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+
+      &:not(:first-child) {
+        margin-left: -1px;
+      }
+    }
+
+    .form-field {
+      position: relative;
+      z-index: 1;
+      flex: 1 1 auto;
+      width: 1%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    & > span {
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 25px;
+      color: var(--white);
+      background: var(--green);
+      transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+    }
+
+    &:focus-within {
+      & > span {
+        color: #fff;
+        background: #678efe;
+        border-color: var(--green);
+      }
+    }
+  }
 
   .sliderArea {
     width: 160px;
-    margin-top: 50px;
   }
 
   .rc-slider-rail {

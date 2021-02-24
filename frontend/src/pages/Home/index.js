@@ -7,6 +7,8 @@ import api from '../../services/api';
 import { formatPrice } from '../../utils/format';
 import * as CartActions from '../../store/modules/cart/actions';
 
+import Input from '../../components/Input';
+
 import 'rc-slider/assets/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -66,8 +68,46 @@ export default function Home() {
       <Header />
       <Container>
         <Filters>
-          <input type="text" placeholder="Categoria produto..." />
-          <input type="text" placeholder="Código produto..." />
+          <PriceRange>
+            <strong>Faixa de preço</strong>
+            <div className="form-group">
+              <span>De R$</span>
+              <input
+                className="form-field"
+                type="text"
+                placeholder={min}
+                disabled
+              />
+            </div>
+            <div className="form-group">
+              <span>Até R$</span>
+              <input
+                className="form-field"
+                type="text"
+                placeholder={max}
+                disabled
+              />
+            </div>
+            <Range
+              marks={{
+                100: `R$ ${min}`,
+                2000: `R$ ${max}`
+              }}
+              min={min}
+              max={max}
+              step={50}
+              defaultValue={[100, 2000]}
+              // tipFormatter={value => `R$${value}`}
+              // tipProps={{
+              //   placement: 'top',
+              //   visible: true
+              // }}
+              className="sliderArea"
+            />
+          </PriceRange>
+
+          {/* <Input text="Categoria" />
+          <Input text="Código" />
           <CheckBox>
             <input type="checkbox" id="scales" name="scales" />
             <label htmlFor="scales">Em Estoque</label>
@@ -90,7 +130,7 @@ export default function Home() {
               }}
               className="sliderArea"
             />
-          </PriceRange>
+          </PriceRange> */}
         </Filters>
         {products.map(product => (
           <Product key={product.id}>
