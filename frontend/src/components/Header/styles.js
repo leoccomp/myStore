@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 import px2vw from '../../utils/px2vw';
 
 const animate = keyframes`
@@ -33,6 +34,7 @@ export const Container = styled.header`
     box-sizing: border-box;
     border-radius: 25px;
     padding: ${px2vw(5, 320)};
+    margin-right: 50px;
 
     @media (min-width: 768px) {
       padding: ${px2vw(5, 768)};
@@ -125,6 +127,22 @@ export const Container = styled.header`
   }
 `;
 
+export const LeftSide = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 65%;
+`;
+
+export const RightSide = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 35%;
+`;
+
 export const LinkLogo = styled.a`
   text-decoration: none;
   margin-left: ${px2vw(10, 320)};
@@ -169,12 +187,10 @@ export const Cart = styled.button`
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
-  background-color: var(--black);
-  margin-right: ${px2vw(10, 320)};
-  border-radius: 8px;
+  background-color: var(--green);
   border: none;
+  margin-right: 30px;
 
-  width: ${px2vw(60, 320)};
   height: ${px2vw(30, 320)};
 
   &:hover {
@@ -186,7 +202,7 @@ export const Cart = styled.button`
     font-weight: bold;
     font-size: ${px2vw(10, 320)};
     line-height: 22px;
-    color: var(--green);
+    color: var(--black);
 
     @media (min-width: 768px) {
       font-size: ${px2vw(18, 768)};
@@ -199,25 +215,28 @@ export const Cart = styled.button`
 
   svg {
     font-size: ${px2vw(10, 320)};
+    margin-left: ${px2vw(10, 320)};
 
     @media (min-width: 768px) {
       font-size: ${px2vw(18, 768)};
+      margin-left: ${px2vw(10, 768)};
     }
 
     @media (min-width: 1024px) {
       font-size: ${px2vw(18)};
+      margin-left: ${px2vw(10)};
     }
   }
 
   @media (min-width: 768px) {
-    margin-right: ${px2vw(88, 768)};
+    /* margin-right: ${px2vw(88, 768)}; */
 
     width: ${px2vw(90, 768)};
     height: ${px2vw(45, 768)};
   }
 
   @media (min-width: 1024px) {
-    margin-right: ${px2vw(88)};
+    /* margin-right: ${px2vw(88)}; */
 
     width: ${px2vw(90)};
     height: ${px2vw(45)};
@@ -663,5 +682,62 @@ export const ButtonFinish = styled.button`
       font-size: ${px2vw(28)};
       line-height: ${px2vw(15)};
     }
+  }
+`;
+
+export const Login = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  border-right: 1px solid var(--black);
+
+  &:hover {
+    opacity: 0.7;
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  div {
+    text-align: right;
+    margin-right: 10px;
+    color: var(--dark-gray);
+    font-size: 12px;
+  }
+
+  strong {
+    display: block;
+    color: var(--black);
+    font-size: 16px;
+  }
+
+  span {
+    font-size: 12px;
+  }
+`;
+
+export const Profile = styled.div`
+  display: flex;
+
+  margin-right: 10px;
+
+  strong {
+    display: block;
+    color: var(--black);
+  }
+
+  svg {
+    margin-right: 20px;
+  }
+`;
+
+export const LinkProfile = styled.a`
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--dark-gray);
+
+  :hover {
+    color: inherit;
+    text-decoration: inherit;
   }
 `;
