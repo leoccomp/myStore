@@ -22,7 +22,7 @@ export const Container = styled.header`
   background-color: var(--green);
 
   width: 100%;
-  height: 101px;
+  height: 81px;
 
   form {
     left: 50%;
@@ -149,6 +149,11 @@ export const LinkLogo = styled.a`
     letter-spacing: 0px;
   }
 
+  :hover {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
   @media (min-width: 768px) {
     margin-left: ${px2vw(67, 768)};
   }
@@ -156,15 +161,6 @@ export const LinkLogo = styled.a`
   @media (min-width: 1024px) {
     margin-left: ${px2vw(67)};
   }
-`;
-
-export const Search = styled.input`
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
 `;
 
 export const Cart = styled.button`

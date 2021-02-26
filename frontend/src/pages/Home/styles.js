@@ -8,40 +8,9 @@ export const Section = styled.body`
 `;
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: ${px2vw(20, 320)};
-  padding-top: ${px2vw(15, 320)};
-  padding-right: ${px2vw(25, 320)};
-  padding-left: ${px2vw(25, 320)};
-  max-width: 100%;
-  max-height: 100vh;
-
-  flex: 1;
-
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: ${px2vw(20, 768)};
-    padding-top: ${px2vw(30, 768)};
-    padding-right: ${px2vw(110, 768)};
-    padding-left: ${px2vw(110, 768)};
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: ${px2vw(10)};
-    padding-top: ${px2vw(20)};
-    padding-right: ${px2vw(180)};
-    padding-left: ${px2vw(290)};
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Filters = styled.nav`
@@ -50,34 +19,36 @@ export const Filters = styled.nav`
   justify-content: flex-start;
   align-items: center;
 
-  padding: 10px;
+  width: 20%;
 
-  position: fixed;
-  left: 20px;
+  width: ${px2vw(238, 320)};
+  min-height: ${px2vw(520, 320)};
+  margin: ${px2vw(10, 320)};
+  padding: ${px2vw(10, 320)};
+
+  /* position: fixed;
+  left: ${px2vw(20, 320)}; */
 
   background-color: var(--white);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
   border-radius: 8px;
 
-  input {
-    width: 220px;
-    height: 40px;
-    margin-bottom: 10px;
+  @media (min-width: 768px) {
+    width: ${px2vw(238, 768)};
+    min-height: ${px2vw(520, 768)};
+    margin: ${px2vw(10, 768)};
 
-    :focus {
-      border-color: inherit;
-      -webkit-box-shadow: none;
-      outline: none;
-      box-shadow: 0 0 0 1px var(--green);
-      padding: 8px;
-      border-radius: 8px;
-    }
+    padding: ${px2vw(10, 768)};
+    left: ${px2vw(20, 768)};
   }
 
   @media (min-width: 1024px) {
     width: ${px2vw(238)};
-    min-height: ${px2vw(520)};
+    /* min-height: ${px2vw(520)}; */
     margin: ${px2vw(10)};
+
+    /* padding: ${px2vw(10)};
+    left: ${px2vw(20)}; */
   }
 `;
 
@@ -85,10 +56,22 @@ export const PriceRange = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 
   width: 200px;
-  height: 30vh;
+  height: 28vh;
+
+  strong {
+    width: 200px;
+    text-align: left;
+  }
+
+  .group-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 13vh;
+    margin-top: 10px;
+  }
 
   .form-field {
     display: block;
@@ -175,6 +158,7 @@ export const PriceRange = styled.div`
 
   .sliderArea {
     width: 160px;
+    margin-top: 45px;
   }
 
   .rc-slider-rail {
@@ -230,6 +214,43 @@ export const CheckBox = styled.div`
   }
 `;
 
+export const Products = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: ${px2vw(20, 320)};
+  /* padding-top: ${px2vw(15, 320)};
+  padding-right: ${px2vw(25, 320)};
+  padding-left: ${px2vw(25, 320)}; */
+  width: 80%;
+
+  margin-top: 8px;
+  margin-bottom: 20px;
+
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: ${px2vw(20, 768)};
+    /* padding-top: ${px2vw(10, 768)};
+    padding-right: ${px2vw(110, 768)};
+    padding-left: ${px2vw(110, 768)}; */
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: ${px2vw(20)};
+    /* padding-top: ${px2vw(10)};
+    padding-right: ${px2vw(180)};
+    padding-left: ${px2vw(290)}; */
+  }
+`;
+
 export const Product = styled.div`
   display: flex;
   flex-direction: column;
@@ -242,7 +263,7 @@ export const Product = styled.div`
 
   background-color: var(--white);
 
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   border-bottom: 0;
 
@@ -254,7 +275,7 @@ export const Product = styled.div`
 
   @media (min-width: 1024px) {
     width: ${px2vw(238)};
-    min-height: ${px2vw(300)};
+    min-height: ${px2vw(285)};
     margin: ${px2vw(10)};
   }
 `;

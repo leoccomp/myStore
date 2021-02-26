@@ -8,7 +8,6 @@ export const Container = styled.header`
   background-color: var(--green);
 
   height: 34px;
-  margin-top: 30px;
 `;
 
 export const Span = styled.span`

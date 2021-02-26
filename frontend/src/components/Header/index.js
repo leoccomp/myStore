@@ -7,7 +7,6 @@ import * as CartActions from '../../store/modules/cart/actions';
 import {
   Container,
   LinkLogo,
-  Search,
   Cart,
   CartMenu,
   CartHeader,

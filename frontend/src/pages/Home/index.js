@@ -21,6 +21,7 @@ import {
   Filters,
   CheckBox,
   PriceRange,
+  Products,
   Product,
   DescAndPrice,
   Name,
@@ -29,6 +30,7 @@ import {
   Button,
   ImageContainer
 } from './styles';
+import Sections from '../../components/Sections';
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -38,7 +40,7 @@ export default function Home() {
   const [min, setMin] = useState(100);
   const [max, setMax] = useState(2000);
   const step = 10;
-  const values = [100, 1000];
+  const [values, setValues] = useState([min, max]);
 
   const dispatch = useDispatch();
 
@@ -61,48 +63,47 @@ export default function Home() {
     dispatch(CartActions.addToCartRequest(id));
   }
 
-  function handleChangeSlider() {}
-
   return (
     <Section>
       <Header />
+      <Sections />
       <Container>
         <Filters>
           <PriceRange>
             <strong>Faixa de preço</strong>
-            <div className="form-group">
-              <span>De R$</span>
-              <input
-                className="form-field"
-                type="text"
-                placeholder={min}
-                disabled
-              />
-            </div>
-            <div className="form-group">
-              <span>Até R$</span>
-              <input
-                className="form-field"
-                type="text"
-                placeholder={max}
-                disabled
-              />
+            <div className="group-input">
+              <div className="form-group">
+                <span>De&nbsp;</span>
+                <input
+                  className="form-field"
+                  type="text"
+                  placeholder={values[0].toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  disabled
+                />
+              </div>
+              <div className="form-group">
+                <span>Até</span>
+                <input
+                  className="form-field"
+                  type="text"
+                  placeholder={values[1].toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  disabled
+                />
+              </div>
             </div>
             <Range
-              marks={{
-                100: `R$ ${min}`,
-                2000: `R$ ${max}`
-              }}
-              min={min}
-              max={max}
+              min={100}
+              max={2000}
               step={50}
-              defaultValue={[100, 2000]}
-              // tipFormatter={value => `R$${value}`}
-              // tipProps={{
-              //   placement: 'top',
-              //   visible: true
-              // }}
+              defaultValue={values}
               className="sliderArea"
+              onChange={value => setValues(value)}
             />
           </PriceRange>
 
@@ -132,26 +133,31 @@ export default function Home() {
             />
           </PriceRange> */}
         </Filters>
-        {products.map(product => (
-          <Product key={product.id}>
-            <ImageContainer>
-              <img src={product.image} alt={product.title} />
-            </ImageContainer>
-            <DescAndPrice>
-              <Name>{product.name || <Skeleton />}</Name>
-              <Price>
-                <span>{`R$${product.price}` || <Skeleton />}</span>
-              </Price>
-            </DescAndPrice>
-            <Description>
-              {product.short_description || <Skeleton />}
-            </Description>
-            <Button type="button" onClick={() => handleAddProduct(product.id)}>
-              <MdAddShoppingCart size={16} color="#000000" />
-              <span>Comprar</span>
-            </Button>
-          </Product>
-        ))}
+        <Products>
+          {products.map(product => (
+            <Product key={product.id}>
+              <ImageContainer>
+                <img src={product.image} alt={product.title} />
+              </ImageContainer>
+              <DescAndPrice>
+                <Name>{product.name || <Skeleton />}</Name>
+                <Price>
+                  <span>{`R$${product.price}` || <Skeleton />}</span>
+                </Price>
+              </DescAndPrice>
+              <Description>
+                {product.short_description || <Skeleton />}
+              </Description>
+              <Button
+                type="button"
+                onClick={() => handleAddProduct(product.id)}
+              >
+                <MdAddShoppingCart size={16} color="#000000" />
+                <span>Comprar</span>
+              </Button>
+            </Product>
+          ))}
+        </Products>
       </Container>
       <Footer />
     </Section>
