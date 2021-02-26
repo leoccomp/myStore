@@ -47,28 +47,6 @@ export default function Home() {
         <Filters />
         <Products />
       </Main>
-      {/* <Products>
-        {products.map(product => (
-          <Product key={product.id}>
-            <ImageContainer>
-              <img src={product.image} alt={product.title} />
-            </ImageContainer>
-            <DescAndPrice>
-              <Name>{product.name || <Skeleton />}</Name>
-              <Price>
-                <span>{`R$${product.price}` || <Skeleton />}</span>
-              </Price>
-            </DescAndPrice>
-            <Description>
-              {product.short_description || <Skeleton />}
-            </Description>
-            <Button type="button" onClick={() => handleAddProduct(product.id)}>
-              <MdAddShoppingCart size={16} color="#000000" />
-              <span>Comprar</span>
-            </Button>
-          </Product>
-        ))}
-      </Products> */}
       <Footer />
     </Container>
   );
