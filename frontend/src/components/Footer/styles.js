@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import px2vw from '../../utils/px2vw';
 
-export const Container = styled.header`
+export const Container = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--green);
 
-  height: 34px;
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+  height: 5%;
 `;
 
 export const Span = styled.span`

@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import api from '../../services/api';
+
+import { MdAddShoppingCart } from 'react-icons/md';
+import Skeleton from 'react-loading-skeleton';
 import { formatPrice } from '../../utils/format';
+
 import * as CartActions from '../../store/modules/cart/actions';
 
-import 'rc-slider/assets/index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import api from '../../services/api';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Sections from '../../components/Sections';
-import Filters from '../../components/Filters';
-import Products from '../../components/Products';
+import {
+  Container,
+  Product,
+  CardItem,
+  DescAndPrice,
+  Name,
+  Description,
+  Price,
+  Button,
+  ImageContainer
+} from './styles';
 
-import { Container, Main, CheckBox } from './styles';
-
-export default function Home() {
+export default function Products() {
   const [products, setProducts] = useState([]);
 
   const dispatch = useDispatch();
@@ -41,15 +47,9 @@ export default function Home() {
 
   return (
     <Container>
-      <Header />
-      <Sections />
-      <Main>
-        <Filters />
-        <Products />
-      </Main>
-      {/* <Products>
+      <Product>
         {products.map(product => (
-          <Product key={product.id}>
+          <CardItem key={product.id}>
             <ImageContainer>
               <img src={product.image} alt={product.title} />
             </ImageContainer>
@@ -66,10 +66,9 @@ export default function Home() {
               <MdAddShoppingCart size={16} color="#000000" />
               <span>Comprar</span>
             </Button>
-          </Product>
+          </CardItem>
         ))}
-      </Products> */}
-      <Footer />
+      </Product>
     </Container>
   );
 }

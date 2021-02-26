@@ -22,7 +22,7 @@ export const Container = styled.header`
   background-color: var(--green);
 
   width: 100%;
-  height: 81px;
+  height: 10%;
 
   form {
     left: 50%;
