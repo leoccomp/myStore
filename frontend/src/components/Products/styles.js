@@ -3,22 +3,45 @@ import px2vw from '../../utils/px2vw';
 
 export const Container = styled.main`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
-  width: 85%;
+  width: 100%;
+  height: 100%;
+`;
+
+export const ButtonLeft = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 3%;
   height: 95%;
+  margin-right: 10px;
 
-  /* margin: ${px2vw(5, 320)}; */
+  background-color: var(--white);
 
-  @media (min-width: 768px) {
-    /* margin: ${px2vw(7, 768)}; */
-  }
+  border: none;
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+`;
 
-  @media (min-width: 1024px) {
-    /* margin: ${px2vw(10)}; */
-  }
+export const ButtonRight = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 3%;
+  height: 95%;
+  margin-left: 10px;
+
+  background-color: var(--white);
+
+  border: none;
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 `;
 
 export const Product = styled.div`
@@ -26,6 +49,8 @@ export const Product = styled.div`
   grid-template-columns: 1fr;
   grid-gap: ${px2vw(20, 320)};
   padding: 0 ${px2vw(10, 320)};
+
+  height: 95%;
 
   overflow-y: scroll;
   scrollbar-width: none;
@@ -43,8 +68,7 @@ export const Product = styled.div`
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: ${px2vw(60)};
-    padding: 0 ${px2vw(15)};
+    grid-gap: ${px2vw(20)};
   }
 `;
 
@@ -70,7 +94,7 @@ export const CardItem = styled.div`
 
   @media (min-width: 1024px) {
     width: ${px2vw(238)};
-    min-height: ${px2vw(285)};
+    min-height: ${px2vw(220)};
   }
 `;
 
@@ -98,12 +122,12 @@ export const ImageContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: ${px2vw(160)};
-    height: ${px2vw(160)};
+    width: ${px2vw(120)};
+    height: ${px2vw(120)};
 
     > img {
-      max-width: ${px2vw(111)};
-      max-height: ${px2vw(138)};
+      max-width: ${px2vw(91)};
+      max-height: ${px2vw(118)};
     }
   }
 `;

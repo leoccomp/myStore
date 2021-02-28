@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import px2vw from '../../utils/px2vw';
 
 export const Container = styled.div`
   display: flex;
@@ -14,7 +13,7 @@ export const Main = styled.main`
   justify-content: space-between;
   align-items: center;
 
-  height: 80%;
+  height: 85%;
 `;
 
 export const CheckBox = styled.div`

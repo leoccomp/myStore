@@ -11,7 +11,7 @@ export const Container = styled.footer`
   bottom: 0;
 
   width: 100%;
-  height: 5%;
+  height: 3.5%;
 `;
 
 export const Span = styled.span`

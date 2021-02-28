@@ -23,101 +23,64 @@ export const Container = styled.header`
   background-color: var(--green);
 
   width: 100%;
-  height: 10%;
+  height: 8%;
 
   form {
-    left: 50%;
-    transform: translate(-5%, -5%);
-    transition: all 1s;
-    width: 50px;
-    height: 50px;
-    box-sizing: border-box;
-    border-radius: 25px;
-    padding: ${px2vw(5, 320)};
-    margin-right: 50px;
+    position: relative;
+    width: 25rem;
+    background: var(--white);
+    border-radius: 16px;
+    margin-right: 100px;
 
-    @media (min-width: 768px) {
-      padding: ${px2vw(5, 768)};
+    input,
+    button {
+      height: 2rem;
+      border: 0;
+      color: var(--black);
+      font-size: 14px;
     }
 
-    @media (min-width: 1024px) {
-      padding: ${px2vw(5)};
-    }
-  }
-
-  input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 42.5px;
-    line-height: 30px;
-    outline: 0;
-    border: 0;
-    display: none;
-    font-size: 1em;
-    border-radius: 20px;
-    padding: 0 20px;
-  }
-
-  .fa {
-    box-sizing: border-box;
-    padding: 10px;
-    width: ${px2vw(30, 320)};
-    height: ${px2vw(30, 320)};
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
-    background-color: var(--black);
-    color: var(--green);
-    text-align: center;
-    font-size: 1.2em;
-    transition: all 1s;
-
-    @media (min-width: 768px) {
-      width: ${px2vw(42.5, 768)};
-      height: ${px2vw(42.5, 768)};
+    input[type='search'] {
+      outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
+      width: 100%;
+      background: var(--white);
+      padding: 0 1rem;
+      border-radius: 16px;
+      appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+      transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+      transition-property: width, border-radius;
+      z-index: 1;
+      position: relative;
     }
 
-    @media (min-width: 1024px) {
-      width: ${px2vw(42.5)};
-      height: ${px2vw(42.5)};
-    }
-  }
-
-  .fa-search {
-    font-size: ${px2vw(12, 320)};
-
-    @media (min-width: 768px) {
-      font-size: ${px2vw(20, 768)};
+    button {
+      display: none; // prevent being able to tab to it
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4rem;
+      font-weight: bold;
+      background: #57bd84;
+      border-radius: 0 16px 16px 0;
     }
 
-    @media (min-width: 1024px) {
-      font-size: ${px2vw(22)};
-    }
-  }
-
-  form:hover {
-    width: ${px2vw(100, 320)};
-    cursor: pointer;
-
-    @media (min-width: 768px) {
-      width: ${px2vw(280, 768)};
+    input:not(:placeholder-shown) {
+      border-radius: 16px 0 0 16px;
+      width: calc(100% - 4rem);
+      + button {
+        display: block;
+      }
     }
 
-    @media (min-width: 1024px) {
-      width: ${px2vw(400)};
+    label {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
     }
-  }
-
-  form:hover input {
-    display: block;
-  }
-
-  form:hover .fa {
-    background: var(--green);
-    color: black;
   }
 
   @media (min-width: 768px) {

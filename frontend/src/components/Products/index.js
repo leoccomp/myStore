@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { MdAddShoppingCart } from 'react-icons/md';
+import {
+  MdAddShoppingCart,
+  MdKeyboardArrowRight,
+  MdKeyboardArrowLeft
+} from 'react-icons/md';
 import Skeleton from 'react-loading-skeleton';
 import { formatPrice } from '../../utils/format';
 
@@ -11,7 +15,9 @@ import api from '../../services/api';
 
 import {
   Container,
+  ButtonLeft,
   Product,
+  ButtonRight,
   CardItem,
   DescAndPrice,
   Name,
@@ -47,6 +53,9 @@ export default function Products() {
 
   return (
     <Container>
+      {/* <ButtonLeft>
+        <MdKeyboardArrowLeft size={40} />
+      </ButtonLeft> */}
       <Product>
         {products.map(product => (
           <CardItem key={product.id}>
@@ -69,6 +78,9 @@ export default function Products() {
           </CardItem>
         ))}
       </Product>
+      {/* <ButtonRight>
+        <MdKeyboardArrowRight size={40} />
+      </ButtonRight> */}
     </Container>
   );
 }

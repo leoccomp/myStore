@@ -14,6 +14,7 @@ import Filters from '../../components/Filters';
 import Products from '../../components/Products';
 
 import { Container, Main, CheckBox } from './styles';
+import LocationBar from '../../components/LocationBar';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -43,8 +44,9 @@ export default function Home() {
     <Container>
       <Header />
       <Sections />
+      {/* <LocationBar /> */}
       <Main>
-        <Filters />
+        {/* <Filters /> */}
         <Products />
       </Main>
       <Footer />

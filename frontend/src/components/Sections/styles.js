@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 5%;
+  height: 4%;
 `;
 
 export const Section = styled.nav`
@@ -14,9 +14,10 @@ export const Section = styled.nav`
   justify-content: space-around;
   align-items: center;
 
+  font-size: 14px;
   background-color: var(--light-gray);
   width: 100%;
-  padding: 5px;
+  height: 100%;
 `;
 
 export const Item = styled.a`

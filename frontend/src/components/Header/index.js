@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { MdClose, MdAddShoppingCart, MdShoppingBasket } from 'react-icons/md';
+import {
+  MdClose,
+  MdAddShoppingCart,
+  MdShoppingBasket,
+  MdSearch
+} from 'react-icons/md';
 import { FaUserAlt, FaShoppingCart } from 'react-icons/fa';
 
 import * as CartActions from '../../store/modules/cart/actions';
@@ -70,9 +75,12 @@ export default function Header() {
           <strong>my_</strong>
           <span>store</span>
         </LinkLogo>
-        <form action="">
-          <input type="search" placeholder="Busca rápida..." />
-          <i className="fa fa-search" />
+        <form onSubmit="event.preventDefault();" role="search">
+          <label htmlFor="search">Search for stuff</label>
+          <input id="search" type="search" placeholder="Busca rápida..." />
+          <button type="submit">
+            <MdSearch size={18} />
+          </button>
         </form>
       </LeftSide>
       <RightSide>

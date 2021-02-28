@@ -4,7 +4,7 @@ import { FiArrowRight, FiArrowDown } from 'react-icons/fi';
 
 import { Container, Section, Item, ItemSections } from './styles';
 
-export default function Sections() {
+export default function LocationBar() {
   const [allSections, setAllSections] = useState(false);
 
   function expandAllSelections() {
@@ -15,14 +15,10 @@ export default function Sections() {
     <Container>
       <Section>
         <ItemSections nohref onClick={expandAllSelections}>
-          {allSections ? <FiArrowDown /> : <FiArrowRight />}
-          Todos os departamentos
+          Home
+          <FiArrowRight />
         </ItemSections>
-        <Item>Smartphones</Item>
-        <Item>Smartwatchs</Item>
-        <Item>Audio</Item>
-        <Item>Tablets</Item>
-        <Item>Headphones</Item>
+        <Item>Destaques</Item>
       </Section>
     </Container>
   );
