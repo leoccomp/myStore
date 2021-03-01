@@ -88,15 +88,15 @@ export default function Header() {
           <Login to={!logged ? '/login' : '/profile'}>
             <div>
               <strong>{usuario}</strong>
-              <div>
+              <>
                 {logged ? (
                   <LinkProfile nohref>Meu Perfil</LinkProfile>
                 ) : (
                   <LinkProfile nohref>Entre ou cadastre-se</LinkProfile>
                 )}
-              </div>
+              </>
             </div>
-            <FaUserAlt size={28} color="#000000" />
+            <FaUserAlt color="#000000" />
           </Login>
         </Profile>
         {toggleMenuIsOpened ? (
@@ -152,7 +152,7 @@ export default function Header() {
           </CartMenu>
         ) : (
           <Cart onClick={handleToggleMenu}>
-            <FaShoppingCart size={28} color="#000000" />
+            <FaShoppingCart color="#000000" />
             <span>{cartSize}</span>
           </Cart>
         )}

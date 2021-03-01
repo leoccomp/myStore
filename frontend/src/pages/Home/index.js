@@ -42,14 +42,14 @@ export default function Home() {
 
   return (
     <Container>
-      <Header />
+      {/* <Header /> */}
       <Sections />
       {/* <LocationBar /> */}
       <Main>
         {/* <Filters /> */}
         <Products />
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </Container>
   );
 }

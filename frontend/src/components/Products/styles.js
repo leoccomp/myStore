@@ -8,6 +8,8 @@ export const Container = styled.main`
 
   width: 100%;
   height: 100%;
+
+  margin-top: 190px;
 `;
 
 export const ButtonLeft = styled.button`
@@ -69,6 +71,7 @@ export const Product = styled.div`
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: ${px2vw(20)};
+    padding: 0 ${px2vw(10)};
   }
 `;
 
@@ -78,8 +81,8 @@ export const CardItem = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  width: ${px2vw(238, 320)};
-  min-height: ${px2vw(285, 320)};
+  width: ${px2vw(210, 320)};
+  height: ${px2vw(190, 320)};
 
   background-color: var(--white);
 
@@ -89,12 +92,12 @@ export const CardItem = styled.div`
 
   @media (min-width: 768px) {
     width: ${px2vw(208, 768)};
-    min-height: ${px2vw(285, 768)};
+    height: ${px2vw(250, 768)};
   }
 
   @media (min-width: 1024px) {
     width: ${px2vw(238)};
-    min-height: ${px2vw(220)};
+    height: ${px2vw(260)};
   }
 `;
 
@@ -250,7 +253,7 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: ${px2vw(238, 320)};
+  width: ${px2vw(210, 320)};
   height: ${px2vw(32, 320)};
 
   background: var(--green);

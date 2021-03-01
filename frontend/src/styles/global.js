@@ -20,7 +20,7 @@ export default createGlobalStyle`
     --dark-gray: #2c2c2c;
     --medium-gray: #373737;
     --light-gray: #dddddd;
-    --green: #7fff00;
+    --green: #0d730d;
 
     @media (min-width: 768px) {
       font-size: ${px2vw(18)};

@@ -23,21 +23,24 @@ export const Container = styled.header`
   background-color: var(--green);
 
   width: 100%;
-  height: 8%;
+  height: 8vh;
+
+  position: fixed;
+  top: 0;
 
   form {
     position: relative;
-    width: 25rem;
+    width: ${px2vw(90, 320)};
     background: var(--white);
     border-radius: 16px;
-    margin-right: 100px;
+    margin-right: ${px2vw(10, 320)};
 
     input,
     button {
-      height: 2rem;
+      height: ${px2vw(10, 320)};
       border: 0;
       color: var(--black);
-      font-size: 14px;
+      font-size: ${px2vw(5, 320)};
     }
 
     input[type='search'] {
@@ -58,7 +61,7 @@ export const Container = styled.header`
       position: absolute;
       top: 0;
       right: 0;
-      width: 4rem;
+      width: ${px2vw(20, 320)};
       font-weight: bold;
       background: #57bd84;
       border-radius: 0 16px 16px 0;
@@ -80,6 +83,36 @@ export const Container = styled.header`
       height: 1px;
       width: 1px;
       overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      width: ${px2vw(250, 768)};
+      margin-right: ${px2vw(10, 768)};
+
+      input,
+      button {
+        height: ${px2vw(22, 768)};
+        font-size: ${px2vw(10, 768)};
+      }
+
+      button {
+        width: ${px2vw(40, 768)};
+      }
+    }
+
+    @media (min-width: 1024px) {
+      width: ${px2vw(400)};
+      margin-right: ${px2vw(10)};
+
+      input,
+      button {
+        height: ${px2vw(27)};
+        font-size: ${px2vw(12)};
+      }
+
+      button {
+        width: ${px2vw(50)};
+      }
     }
   }
 
@@ -103,7 +136,7 @@ export const RightSide = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  width: 35%;
+  width: ${px2vw(130, 320)};
 `;
 
 export const LinkLogo = styled.a`
@@ -148,13 +181,15 @@ export const Cart = styled.button`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   text-decoration: none;
   transition: opacity 0.2s;
   background-color: var(--green);
   border: none;
-  margin-right: 30px;
 
-  height: ${px2vw(30, 320)};
+  width: ${px2vw(40, 320)};
+  height: ${px2vw(20, 320)};
+  margin-right: ${px2vw(10, 320)};
 
   &:hover {
     opacity: 0.7;
@@ -163,46 +198,39 @@ export const Cart = styled.button`
   span {
     font-style: normal;
     font-weight: bold;
-    font-size: ${px2vw(10, 320)};
-    line-height: 22px;
+    font-size: ${px2vw(6, 320)};
+    line-height: ${px2vw(22, 320)};
     color: var(--black);
-
-    @media (min-width: 768px) {
-      font-size: ${px2vw(18, 768)};
-    }
-
-    @media (min-width: 1024px) {
-      font-size: ${px2vw(18)};
-    }
   }
 
   svg {
     font-size: ${px2vw(10, 320)};
-    margin-left: ${px2vw(10, 320)};
-
-    @media (min-width: 768px) {
-      font-size: ${px2vw(18, 768)};
-      margin-left: ${px2vw(10, 768)};
-    }
-
-    @media (min-width: 1024px) {
-      font-size: ${px2vw(18)};
-      margin-left: ${px2vw(10)};
-    }
   }
 
   @media (min-width: 768px) {
-    /* margin-right: ${px2vw(88, 768)}; */
+    width: ${px2vw(45, 768)};
+    height: ${px2vw(30, 768)};
 
-    width: ${px2vw(90, 768)};
-    height: ${px2vw(45, 768)};
+    span {
+      font-size: ${px2vw(14, 768)};
+    }
+
+    svg {
+      font-size: ${px2vw(16, 768)};
+    }
   }
 
   @media (min-width: 1024px) {
-    /* margin-right: ${px2vw(88)}; */
-
     width: ${px2vw(90)};
     height: ${px2vw(45)};
+
+    span {
+      font-size: ${px2vw(18)};
+    }
+
+    svg {
+      font-size: ${px2vw(28)};
+    }
   }
 `;
 
@@ -663,19 +691,49 @@ export const Login = styled(Link)`
 
   div {
     text-align: right;
-    margin-right: 10px;
+    margin-right: ${px2vw(10, 320)};
     color: var(--dark-gray);
-    font-size: 12px;
+    width: ${px2vw(55, 320)};
+  }
+
+  svg {
+    font-size: ${px2vw(10, 320)};
   }
 
   strong {
     display: block;
     color: var(--black);
-    font-size: 16px;
+    font-size: ${px2vw(5, 320)};
   }
 
-  span {
-    font-size: 12px;
+  @media (min-width: 768px) {
+    div {
+      margin-right: ${px2vw(10, 768)};
+      width: ${px2vw(100, 768)};
+    }
+
+    svg {
+      font-size: ${px2vw(16, 768)};
+    }
+
+    strong {
+      font-size: ${px2vw(9, 768)};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    div {
+      margin-right: ${px2vw(10)};
+      width: ${px2vw(100, 768)};
+    }
+
+    svg {
+      font-size: ${px2vw(28)};
+    }
+
+    strong {
+      font-size: ${px2vw(16)};
+    }
   }
 `;
 
@@ -695,12 +753,20 @@ export const Profile = styled.div`
 `;
 
 export const LinkProfile = styled.a`
-  font-size: 12px;
+  font-size: ${px2vw(5, 320)};
   text-decoration: none;
   color: var(--dark-gray);
 
   :hover {
     color: inherit;
     text-decoration: inherit;
+  }
+
+  @media (min-width: 768px) {
+    font-size: ${px2vw(8, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    font-size: ${px2vw(12)};
   }
 `;

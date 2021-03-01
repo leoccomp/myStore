@@ -9,6 +9,9 @@ import { ToastContainer } from 'react-toastify';
 import GlobalStyle from './styles/global';
 import Routes from './routes';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 import history from './services/history';
 import { store, persistor } from './store';
 
@@ -17,8 +20,10 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Router history={history}>
+          <Header />
           <Routes />
           <GlobalStyle />
+          <Footer />
           <ToastContainer autoClose={3000} />
         </Router>
       </PersistGate>
