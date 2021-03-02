@@ -4,7 +4,7 @@ import { persistReducer } from 'redux-persist';
 export default reducers => {
   const persistedReducer = persistReducer(
     {
-      key: 'soloed_store',
+      key: 'my_store',
       storage
     },
     reducers

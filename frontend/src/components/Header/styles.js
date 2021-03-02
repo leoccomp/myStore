@@ -242,8 +242,9 @@ export const CartMenu = styled.nav`
 
   top: 0;
   width: ${px2vw(180, 320)};
-  height: calc(100vh - 34px);
+  height: calc(100vh - 94px);
   margin-left: ${px2vw(140, 320)};
+  margin-top: ${px2vw(32, 320)};
 
   background: var(--green);
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
@@ -256,11 +257,13 @@ export const CartMenu = styled.nav`
   @media (min-width: 768px) {
     width: ${px2vw(300, 768)};
     margin-left: ${px2vw(468, 768)};
+    margin-top: ${px2vw(49, 768)};
   }
 
   @media (min-width: 1024px) {
     width: ${px2vw(486)};
     margin-left: ${px2vw(953)};
+    margin-top: ${px2vw(66)};
   }
 `;
 
@@ -681,7 +684,7 @@ export const Login = styled(Link)`
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
-  border-right: 1px solid var(--black);
+  /* border-right: 1px solid var(--black); */
 
   &:hover {
     opacity: 0.7;
@@ -724,7 +727,7 @@ export const Login = styled(Link)`
   @media (min-width: 1024px) {
     div {
       margin-right: ${px2vw(10)};
-      width: ${px2vw(100, 768)};
+      width: ${px2vw(130, 768)};
     }
 
     svg {
@@ -768,5 +771,53 @@ export const LinkProfile = styled.a`
 
   @media (min-width: 1024px) {
     font-size: ${px2vw(12)};
+  }
+`;
+
+export const Exit = styled.button`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  text-decoration: none;
+  transition: opacity 0.2s;
+  background-color: var(--black);
+  color: var(--green);
+  font-size: ${px2vw(10, 320)};
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+
+  width: ${px2vw(40, 320)};
+  height: ${px2vw(20, 320)};
+  margin-right: ${px2vw(10, 320)};
+  margin-top: ${px2vw(10, 320)};
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: ${px2vw(6, 320)};
+    line-height: ${px2vw(22, 320)};
+    color: var(--green);
+  }
+
+  @media (min-width: 768px) {
+    width: ${px2vw(40, 768)};
+    height: ${px2vw(20, 768)};
+    margin-right: ${px2vw(10, 768)};
+    margin-top: ${px2vw(10, 768)};
+    font-size: ${px2vw(10, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(30)};
+    height: ${px2vw(30)};
+    margin-right: ${px2vw(10)};
+    margin-top: ${px2vw(10)};
+    font-size: ${px2vw(10)};
   }
 `;

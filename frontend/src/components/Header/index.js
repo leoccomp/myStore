@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  MdClose,
-  MdAddShoppingCart,
-  MdShoppingBasket,
-  MdSearch
-} from 'react-icons/md';
-import { FaUserAlt, FaShoppingCart } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import { MdClose, MdSearch } from 'react-icons/md';
+import { FaShoppingCart } from 'react-icons/fa';
+
+import Cookies from 'js-cookie';
 
 import * as CartActions from '../../store/modules/cart/actions';
+import * as UserActions from '../../store/modules/user/actions';
 
 import {
   Container,
@@ -31,15 +31,27 @@ import {
   ButtonFinish,
   Profile,
   LinkProfile,
-  Login
+  Login,
+  Exit
 } from './styles';
 
 export default function Header() {
   const cartSize = useSelector(state => state.cart.length);
   const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
+  const history = useHistory();
+
+  const userName = Cookies.get('name');
+  const logCookie = Cookies.get('logged');
 
   const [usuario, setUsuario] = useState('Olá, seja bem vindo!');
   const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    if (logCookie === 'true') {
+      setLogged(true);
+      setUsuario(`Olá, ${userName}`);
+    }
+  }, []);
 
   const total = useSelector(state =>
     state.cart.reduce((totalSum, product) => {
@@ -66,6 +78,13 @@ export default function Header() {
 
   const handleToggleMenu = () => {
     setToggleMenuIsOpened(!toggleMenuIsOpened);
+  };
+
+  const handleExit = () => {
+    Cookies.set('logged', 'false');
+
+    toast.success('Logout efetuado com sucesso!');
+    history.push('/');
   };
 
   return (
@@ -96,15 +115,15 @@ export default function Header() {
                 )}
               </>
             </div>
-            <FaUserAlt color="#000000" />
           </Login>
+          <Exit onClick={handleExit}>Sair</Exit>
         </Profile>
         {toggleMenuIsOpened ? (
           <CartMenu>
             <CartHeader>
               <CartHeaderDesc>Meu carrinho</CartHeaderDesc>
               <ButtonClose>
-                <MdClose color="#39ff14" onClick={handleToggleMenu} />
+                <MdClose color="#0d730d" onClick={handleToggleMenu} />
               </ButtonClose>
             </CartHeader>
             <CartItems>
@@ -133,7 +152,7 @@ export default function Header() {
                   <strong>{`R$${item.subtotal}`}</strong>
                   <ButtonRemove>
                     <MdClose
-                      color="#7fff00"
+                      color="#0d730d"
                       onClick={() =>
                         dispatch(CartActions.removeFromCart(item.id))
                       }

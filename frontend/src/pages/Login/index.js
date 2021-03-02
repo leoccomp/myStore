@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+
+import Cookies from 'js-cookie';
+import bcrypt from 'bcryptjs';
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -15,18 +19,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
-
-// import FacebookLogin from 'react-facebook-login';
-// import GoogleLogin from 'react-google-login';
-
-// import history from '../../services/history';
-
-// import api from '../../services/api';
-
-// import {
-//   signInRequest,
-//   signUpRequest
-// } from '../../store/modules/customer/actions';
+import * as UserActions from '../../store/modules/user/actions';
 
 import { Container, Form, Links } from './styles';
 
@@ -38,16 +31,6 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2)
   }
 }));
-
-const HtmlTooltip = withStyles(theme => ({
-  tooltip: {
-    backgroundColor: '#f5f5f9',
-    color: 'rgba(0, 0, 0, 0.87)',
-    maxWidth: 220,
-    fontSize: theme.typography.pxToRem(12),
-    border: '1px solid #dadde9'
-  }
-}))(Tooltip);
 
 const ColorButton = withStyles((theme: Theme) => ({
   root: {
@@ -62,26 +45,16 @@ const ColorButton = withStyles((theme: Theme) => ({
 }))(Button);
 
 export default function Login() {
-  // const loading = useSelector(state => state.customer.loading);
-  // const dispatch = useDispatch();
+  const users = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
   const loading = false;
   const classes = useStyles();
   const [user, setUser] = useState({
-    customer_type: '',
-    customer_doc: '',
-    customer_name: '',
+    customerName: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    segment: '',
-    zip_code: '',
-    street: '',
-    complement: '',
-    neighborhood: '',
-    state: '',
-    city: '',
-    phone: '',
-    whatsapp: ''
+    confirmPassword: ''
   });
   const [login, setLogin] = useState({
     login: false,
@@ -89,33 +62,60 @@ export default function Login() {
     password: ''
   });
 
-  const responseGoogle = response => {
-    console.log(response);
-  };
-  const responseFacebook = response => {
-    console.log(response);
-  };
-
-  function handleLogin() {
+  async function handleLogin() {
     const { email, password } = login;
+    let userExist = false;
+    let passwordStored = '';
 
     if (!email) {
       toast.error('Um email válido precisa ser informado!');
       return;
     }
+
     if (!password) {
       toast.error('A senha está em branco!');
     }
 
+    users.forEach(item => {
+      if (item.email === email) {
+        userExist = true;
+        passwordStored = item.password;
+      }
+    });
+
+    if (!userExist) {
+      toast.error('Email não existe no cadastro!');
+      return;
+    }
+
+    const passCorrect = await bcrypt.compare(password, passwordStored);
+
+    if (passCorrect) {
+      toast.success('Usuário autenticado com sucesso!');
+      history.push('/');
+    } else {
+      toast.error('Senha inválida!');
+    }
+
+    // const cookieEmail = Cookies.get('email');
+    // const cookiePass = Cookies.get('password');
+
+    // const passCorrect = await bcrypt.compare(password, cookiePass);
+
+    // if (email === cookieEmail && passCorrect) {
+    //   Cookies.set('logged', 'true');
+    //   toast.success('Usuário autenticado com sucesso!');
+    //   history.push('/');
+    // } else {
+    //   toast.error('Usuário ou senha inválidos!');
+    // }
+
     // dispatch(signInRequest(email, password));
   }
 
-  function handleCreate() {
-    if (!user.customer_type) {
-      toast.error('O Tipo do usuário precisa ser escolhido!');
-      return;
-    }
-    if (!user.customer_name) {
+  async function handleCreate() {
+    let userExist = false;
+    if (!user.customerName) {
       toast.error('O nome do usuário precisa ser informado!');
       return;
     }
@@ -131,44 +131,39 @@ export default function Login() {
       toast.error('A confirmação da senha precisa ser informada!');
     }
 
-    // const {
-    //   customer_type,
-    //   customer_doc,
-    //   customer_name,
-    //   email,
-    //   password,
-    //   confirmPassword,
-    //   segment,
-    //   zip_code,
-    //   street,
-    //   complement,
-    //   neighborhood,
-    //   state,
-    //   city,
-    //   phone,
-    //   whatsapp,
-    // } = user;
+    users.forEach(item => {
+      if (item.email === user.email) {
+        userExist = true;
+      }
+    });
 
-    // dispatch(
-    //   signUpRequest(
-    //     customer_type,
-    //     customer_doc,
-    //     customer_name,
-    //     email,
-    //     password,
-    //     confirmPassword,
-    //     segment,
-    //     zip_code,
-    //     street,
-    //     complement,
-    //     neighborhood,
-    //     state,
-    //     city,
-    //     phone,
-    //     whatsapp
-    //   )
-    // );
-    // history.push('/login');
+    if (userExist) {
+      toast.error('Email já existe!');
+      return;
+    }
+
+    const passwordHash = await bcrypt.hash(user.password, 8);
+
+    // Cookies.set('name', user.customerName);
+    // Cookies.set('email', user.email);
+    // Cookies.set('password', passwordHash);
+
+    const { customerName, email } = user;
+
+    dispatch(
+      UserActions.userRequest({
+        name: customerName,
+        email,
+        password: passwordHash
+      })
+    );
+
+    setUser({
+      customerName: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    });
   }
 
   function handleValid() {
@@ -230,10 +225,8 @@ export default function Login() {
               id="name"
               type="text"
               label="Nome Completo"
-              value={user.customer_name}
-              onChange={e =>
-                setUser({ ...user, customer_name: e.target.value })
-              }
+              value={user.customerName}
+              onChange={e => setUser({ ...user, customerName: e.target.value })}
               required
               variant="outlined"
             />

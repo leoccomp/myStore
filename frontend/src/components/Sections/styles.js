@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 1024px) {
-    margin-top: ${px2vw(57)};
+    margin-top: ${px2vw(56)};
   }
 `;
 

@@ -6,7 +6,7 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
 
-  margin-top: 115px;
+  margin-top: 130px;
 `;
 
 export const Form = styled.div`
