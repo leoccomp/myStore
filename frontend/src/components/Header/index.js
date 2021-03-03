@@ -130,7 +130,7 @@ export default function Header() {
               {cartItems.map(item => (
                 <CartItem>
                   <ImageContainer>
-                    <img src={item.image} alt="imagem produto" />
+                    <img src={`/products/${item.image}`} alt="imagem produto" />
                   </ImageContainer>
                   <span>{item.name}</span>
                   <ButtonQuantity>

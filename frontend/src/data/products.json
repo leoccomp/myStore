@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Apple Watch Series 4 GPS",
+    "short_description": "Caixa de 44 mm ou 40 mm Tela Retina Sempre Ativa.",
+    "image": "apple-watch.jpg",
+    "price": 399
+  },
+  {
+    "id": 2,
+    "name": "JBL Speaker",
+    "short_description": "A JBL GO 2 é uma caixa de som com Bluetooth.",
+    "image": "jbl-speaker.jpg",
+    "price": 299
+  },
+  {
+    "id": 3,
+    "name": "Apple iPhone X 128GB",
+    "short_description": "Redesigned from scratch and completely revised.",
+    "image": "apple-iphone.jpg",
+    "price": 1299
+  },
+  {
+    "id": 4,
+    "name": "Beats Headphones",
+    "short_description": "Fone de ouvido sem fio ideal para o seu ritmo de vida.",
+    "image": "beats-headphones.jpeg",
+    "price": 679
+  },
+  {
+    "id": 5,
+    "name": "Apple Macbook Pro",
+    "short_description": "O novo Mac Pro oferece aos profissionais desempenho.",
+    "image": "apple-macbook-pro.jpg",
+    "price": 2459
+  },
+  {
+    "id": 6,
+    "name": "Apple iPad Pro 64GB",
+    "short_description": "Conheça o novo iPad Pro. Com tela Liquid Retina.",
+    "image": "apple-ipad.jpeg",
+    "price": 699
+  },
+  {
+    "id": 7,
+    "name": "Apple Homepod",
+    "short_description": "O HomePod mini quase não ocupa espaço.",
+    "image": "apple-homepod.jpg",
+    "price": 199
+  },
+  {
+    "id": 8,
+    "name": "JBuds Air Wireless",
+    "short_description": "JLab JBuds Air são os verdadeiros fones de ouvido.",
+    "image": "jbuds-air-wireless.jpeg",
+    "price": 249
+  },
+  {
+    "id": 9,
+    "name": "Samsung Galaxy S20 128GB",
+    "short_description": "Smartphone Samsung Galaxy S20 128GB Cosmic Gray - Octa-Core 8GB RAM 6,2” Câm. Tripla + Selfie 10MP.",
+    "image": "samsung-galaxy-s20.jpeg",
+    "price": 2899
+  },
+  {
+    "id": 10,
+    "name": "Motorola Moto G9 Power 128GB",
+    "short_description": "Smartphone Motorola Moto G9 Power 128GB - 4G - 4GB RAM - Tela 6,8” Câmera Tripla.",
+    "image": "motorola-moto-g9-power.jpeg",
+    "price": 1529
+  }
+]

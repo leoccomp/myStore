@@ -12,6 +12,46 @@ export const Container = styled.main`
   margin-top: 190px;
 `;
 
+export const Overlay = styled.div`
+  background: rgba(242, 243, 245, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Modal = styled.div`
+  background: var(--white);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 2rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+
+  header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--green);
+    background-size: contain;
+  }
+
+  button {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    background: transparent;
+    border: 0;
+    font-size: 0;
+  }
+`;
+
 export const ButtonLeft = styled.button`
   display: flex;
   flex-direction: column;
@@ -19,7 +59,7 @@ export const ButtonLeft = styled.button`
   align-items: center;
 
   width: 3%;
-  height: 95%;
+  height: 30%;
   margin-right: 10px;
 
   background-color: var(--white);
@@ -75,11 +115,14 @@ export const Product = styled.div`
   }
 `;
 
-export const CardItem = styled.div`
+export const CardItem = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border: none;
+
+  cursor: pointer;
 
   width: ${px2vw(210, 320)};
   height: ${px2vw(190, 320)};
