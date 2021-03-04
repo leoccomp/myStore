@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { MdAddShoppingCart, MdKeyboardArrowLeft } from 'react-icons/md';
+import {
+  MdAddShoppingCart,
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight
+} from 'react-icons/md';
 import { GrFormClose } from 'react-icons/gr';
 import Skeleton from 'react-loading-skeleton';
 import { formatPrice } from '../../utils/format';
@@ -14,6 +18,8 @@ import {
   Container,
   Overlay,
   Modal,
+  ImageDetail,
+  DescriptionDetail,
   ButtonLeft,
   Product,
   ButtonRight,
@@ -29,6 +35,8 @@ import {
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [productDetail, setProductDetail] = useState([]);
+  const [productImages, setProductImages] = useState([]);
+  const [imageIndex, setImageIndex] = useState(0);
   const [isModalDetailOpen, setIsModalDetailOpen] = useState(false);
 
   const dispatch = useDispatch();
@@ -52,7 +60,15 @@ export default function Products() {
     dispatch(CartActions.addToCartRequest(id));
   }
 
-  function handleDetails(product) {
+  async function handleDetails(product) {
+    const response = await api.get(`images/${product.id}`);
+
+    setProductImages([
+      response.data[0].image_1,
+      response.data[0].image_2,
+      response.data[0].image_3
+    ]);
+
     setProductDetail(product);
     setIsModalDetailOpen(true);
   }
@@ -60,6 +76,18 @@ export default function Products() {
   function closeDetailModal() {
     setProductDetail([]);
     setIsModalDetailOpen(false);
+  }
+
+  function handleImageRight() {
+    if (imageIndex !== 2) {
+      setImageIndex(imageIndex + 1);
+    }
+  }
+
+  function handleImageLeft() {
+    if (imageIndex !== 0) {
+      setImageIndex(imageIndex - 1);
+    }
   }
 
   return (
@@ -71,18 +99,25 @@ export default function Products() {
         <Overlay>
           <Modal>
             <header>{productDetail.name}</header>
-            <ButtonLeft>
-              <MdKeyboardArrowLeft size={20} />
-            </ButtonLeft>
-            <ImageContainer>
+            <span>{productDetail.short_description || <Skeleton />}</span>
+            <a href={productDetail.manufacturer_link} target="_blanck">
+              {productDetail.manufacturer}
+            </a>
+            <ImageDetail>
+              <ButtonLeft onClick={handleImageLeft}>
+                <MdKeyboardArrowLeft size={40} />
+              </ButtonLeft>
               <img
-                src={`/products/${productDetail.image}`}
+                src={`${productImages[imageIndex]}`}
                 alt={productDetail.title}
               />
-            </ImageContainer>
-            <Description>
-              {productDetail.short_description || <Skeleton />}
-            </Description>
+              <ButtonRight onClick={handleImageRight}>
+                <MdKeyboardArrowRight size={40} />
+              </ButtonRight>
+            </ImageDetail>
+            <DescriptionDetail>
+              {productDetail.long_description || <Skeleton />}
+            </DescriptionDetail>
 
             <button type="button" onClick={closeDetailModal}>
               <GrFormClose size={20} color="#000000" />

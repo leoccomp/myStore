@@ -3,72 +3,112 @@
       {
         "id": 1,
         "name": "Apple Watch Series 4 GPS",
-        "short_description": "Caixa de 44 mm ou 40 mm Tela Retina Sempre Ativa.",
-        "image": "apple-watch.jpg",
+        "short_description": "Caixa de 44 mm ou 40 mm Tela Retina Sempre Ativa",
+        "long_description": "Atenda uma ligação na piscina. Peça a Siri para enviar mensagens enquanto você dá uma volta com o cachorro. Coloque uma musica para entrar no clima de malhar. Tudo isso sem precisar ter o iPhone por perto. O Apple Watchs Series 4 com rede celular da liberdade de fazer muito mais. Só com seu relógio! ",
+        "manufacturer": "Apple",
+        "manufacturer_link": "https://www.apple.com/br/apple-watch-series-3/",
+        "image": "apple-watch_1.jpg",
+        "categoty": "Smartwatch",
         "price": 399
       },
       {
         "id": 2,
-        "name": "JBL Speaker",
-        "short_description": "A JBL GO 2 é uma caixa de som com Bluetooth.",
-        "image": "jbl-speaker.jpg",
+        "name": "JBL Pulse 4",
+        "short_description": "A Pulse4 brilha noite adentro com um incrível show de luzes LED de alta resolução em 360 graus",
+        "long_description": "A Pulse4 proporciona o som da assinatura JBL em todas as direções com seu conjunto inovador de alto-falantes 360 graus. Pronto para continuar a festa? Proporciona até 12 horas de festa com uma única carga.",
+        "manufacturer": "JBL",
+        "manufacturer_link": "https://www.jbl.com.br/caixas-de-som/JBL+PULSE+4.html?gclid=EAIaIQobChMIlcfispSX7wIViIaRCh2-UAuBEAAYASAAEgI2xPD_BwE",
+        "image": "jbl-pulse_1.jpg",
+        "categoty": "Audio",
         "price": 299
       },
       {
         "id": 3,
-        "name": "Apple iPhone X 128GB",
-        "short_description": "Redesigned from scratch and completely revised.",
-        "image": "apple-iphone.jpg",
+        "name": "Apple iPhone XR 128GB",
+        "short_description": "Redesigned from scratch and completely revised",
+        "long_description": "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla. Tire fotos incríveis com pouca luz usando o modo Noite. Veja cores fiéis em fotos, vídeos e jogos na tela Liquid Retina de 6,1 polegadas.",
+        "manufacturer": "Apple",
+        "manufacturer_link": "https://www.apple.com/br/shop/buy-iphone/iphone-xr/tela-de-6,1-polegadas-128gb-branco",
+        "image": "apple-iphone_1.jpg",
+        "categoty": "Smartphone",
         "price": 1299
       },
       {
         "id": 4,
         "name": "Beats Headphones",
-        "short_description": "Fone de ouvido sem fio ideal para o seu ritmo de vida.",
-        "image": "beats-headphones.jpeg",
+        "short_description": "Fone de ouvido sem fio ideal para o seu ritmo de vida",
+        "long_description": "O Beats Solo3 Wireless traz o premiado som da Beats com acústica de precisão, que garante nitidez, amplitude sonora e equilíbrio incríveis. O revestimento acolchoado dos fones atenua o ruído exterior para que você tenha um som envolvente e fique totalmente sintonizado com a música.",
+        "manufacturer": "Beats",
+        "manufacturer_link": "https://www.beatsbydre.com/br/headphones/solo3-wireless",
+        "image": "beats-headphones_1.jpeg",
+        "categoty": "Headphone",
         "price": 679
       },
       {
         "id": 5,
         "name": "Apple Macbook Pro",
-        "short_description": "O novo Mac Pro oferece aos profissionais desempenho.",
-        "image": "apple-macbook-pro.jpg",
-        "price": 2459
+        "short_description": "Apple MacBook Pro 13, Chip M1, 8GB RAM, 256GB SSD - Space Gray",
+        "long_description": "Usado por estudantes, profissionais criativos e muito mais, o Apple MacBook Pro de 13,3 agora apresenta o primeiro chip da Apple projetado especificamente para Mac. O Apple M1 integra CPU, GPU, Neural Engine, I / O e muito mais em um único sistema em um chip (SoC). Enfrente seus projetos com a rápida CPU de 8 núcleos e jogue aplicativos e jogos com muitos gráficos com a GPU de 8 núcleos.",
+        "manufacturer": "Apple",
+        "manufacturer_link": "https://www.apple.com/br/macbook-pro/?afid=p238%7Cs3DnSiAiU-dc_mtid_1870765e38482_pcrid_485828471485_pgrid_17049238738_&cid=aos-br-kwgo-mac--slid---product-",
+        "image": "apple-macbook-pro_1.jpg",
+        "categoty": "Notebook",
+        "price": 12459
       },
       {
         "id": 6,
         "name": "Apple iPad Pro 64GB",
-        "short_description": "Conheça o novo iPad Pro. Com tela Liquid Retina.",
-        "image": "apple-ipad.jpeg",
-        "price": 699
+        "short_description": "iPad Pro Apple, Tela Liquid Retina 12,9”, 1 TB, Prata, Wi-Fi + Cellular",
+        "long_description": "O novo iPad combina uma potência enorme com versatilidade e simplicidade que você não encontra em outro lugar. Ele vem com o poder do chip A12 Bionic, é compatível com Apple Pencil e o Smart Keyboard e traz os novos recursos incríveis do iPadOS 14",
+        "manufacturer": "Apple",
+        "manufacturer_link": "https://www.iplace.com.br/ipad/novo-ipad-pro/cat115301690?gclid=EAIaIQobChMIz5Cik52X7wIVSgiRCh3MLgjgEAAYASAAEgIsA_D_BwE",
+        "image": "apple-ipad_1.jpeg",
+        "categoty": "Tablet",
+        "price": 19999
       },
       {
         "id": 7,
         "name": "Apple Homepod",
-        "short_description": "O HomePod mini quase não ocupa espaço.",
-        "image": "apple-homepod.jpg",
-        "price": 199
+        "short_description": "O HomePod mini quase não ocupa espaço",
+        "long_description": "O Speaker HomePod MQHW2LL/A A1639 possui coprocessador Chip A8 que gerencia o sistema de som e a assistente Siri, que auxilia em buscas de conteudos e musicas favoritas do usuario. Conta com sensores que analisam a acustica do local e automaticamente possibilitam emitir frequencias de som que sejam propagadas de forma igual por todo o ambiente, alem de 7 tweeters que equalizam as ondas agudas para obter sons suaves e harmonicos e conectividade Wi-Fi para ter acesso a internet.",
+        "manufacturer": "Apple",
+        "manufacturer_link": "https://www.apple.com/homepod/",
+        "image": "apple-homepod_1.jpg",
+        "categoty": "Audio",
+        "price": 5999
       },
       {
         "id": 8,
         "name": "JBuds Air Wireless",
-        "short_description": "JLab JBuds Air são os verdadeiros fones de ouvido.",
-        "image": "jbuds-air-wireless.jpeg",
-        "price": 249
+        "short_description": "Fone de ouvido JLab Audio JBuds Air True Wireless Preto",
+        "long_description": "O JBuds Air oferecer uma experiência unica. Verdadeiro fone de ouvido wireless com uma bateria de longa duração, podendo chegar a mais de 24 horas.",
+        "manufacturer": "JLAB",
+        "manufacturer_link": "https://www.jlab.com/products/jbuds-air-true-wireless-earbuds-charging-case",
+        "image": "jbuds-air-wireless_1.jpeg",
+        "categoty": "Audio",
+        "price": 3249
       },
       {
         "id": 9,
         "name": "Samsung Galaxy S20 128GB",
-        "short_description": "Smartphone Samsung Galaxy S20 128GB Cosmic Gray - Octa-Core 8GB RAM 6,2” Câm. Tripla + Selfie 10MP.",
-        "image": "samsung-galaxy-s20.jpeg",
+        "short_description": "Smartphone Samsung Galaxy S20 128GB Cosmic Gray - Octa-Core 8GB RAM 6,2” Câm. Tripla + Selfie 10MP",
+        "long_description": "O smartphone Samsung Galaxy S20 possui design moderno, armazenamento de 128 GB e muita energia para ser usado em qualquer hora e em qualquer lugar. O aparelho possui proteção contra água e poeira (certificado IP68), dessa forma o usuário não precisará interromper nenhuma atividade ao ar livre, mesmo se uma chuva lhe pegar de surpresa.",
+        "manufacturer": "Samsung",
+        "manufacturer_link": "https://www.samsung.com/br/smartphones/galaxy-s20/galaxy-s20-fe/",
+        "image": "samsung-galaxy-s20_1.jpeg",
+        "categoty": "Smartphone",
         "price": 2899
       },
       {
         "id": 10,
         "name": "Motorola Moto G9 Power 128GB",
-        "short_description": "Smartphone Motorola Moto G9 Power 128GB - 4G - 4GB RAM - Tela 6,8” Câmera Tripla.",
-        "image": "motorola-moto-g9-power.jpeg",
-        "price": 1529
+        "short_description": "Smartphone Motorola Moto G9 Power 128GB - 4G - 4GB RAM - Tela 6,8” Câmera Tripla",
+        "long_description": "Liberte o seu smartphone da tomada com a bateria que dura vários dias com uma única carga. Desenvolvemos nossa maior bateria até hoje e chegamos a ultrabateria de 6000 mAh para você fazer tudo o que quiser sem ficar na mão. Conte com o carregador TurboPower™ que proporciona horas de carga em apenas alguns minutos.",
+        "manufacturer": "Motorola",
+        "manufacturer_link": "https://www.motorola.com.br/smartphone-moto-g9-power/p",
+        "image": "motorola-moto-g9-power_1.jpeg",
+        "categoty": "Smartphone",
+        "price": 2529
       }
     ]
   }

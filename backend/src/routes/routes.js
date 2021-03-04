@@ -1,6 +1,8 @@
 const productsRoutes = require('./products');
 const productFindRoutes = require('./productFind');
+const productCategoryRoutes = require('./productCategory');
 const stockRoutes = require('./stock');
+const imagesRoutes = require('./images');
 
 const appRouter = (app, fs) => {
 
@@ -12,8 +14,9 @@ const appRouter = (app, fs) => {
     // // other routes
     productsRoutes(app, fs);
     productFindRoutes(app, fs);
+    productCategoryRoutes(app, fs);
     stockRoutes(app, fs);
-
+    imagesRoutes(app, fs);
 };
 
 module.exports = appRouter;

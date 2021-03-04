@@ -18,6 +18,7 @@ export default function Sections() {
           {allSections ? <FiArrowDown /> : <FiArrowRight />}
           Todos os departamentos
         </ItemSections>
+        <Item>Notebooks</Item>
         <Item>Smartphones</Item>
         <Item>Smartwatchs</Item>
         <Item>Audio</Item>

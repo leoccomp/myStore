@@ -7,11 +7,13 @@ export const Container = styled.footer`
   align-items: center;
   background-color: var(--green);
 
-  position: fixed;
+  position: absolute;
+  left: 0;
   bottom: 0;
+  right: 0;
 
   width: 100%;
-  height: 3.5%;
+  height: 22px;
 `;
 
 export const Span = styled.span`

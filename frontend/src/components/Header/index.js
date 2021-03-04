@@ -8,7 +8,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import Cookies from 'js-cookie';
 
 import * as CartActions from '../../store/modules/cart/actions';
-import * as UserActions from '../../store/modules/user/actions';
+import { useUser } from '../../context/user';
 
 import {
   Container,
@@ -39,6 +39,7 @@ export default function Header() {
   const cartSize = useSelector(state => state.cart.length);
   const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
   const history = useHistory();
+  const { name, setName } = useUser();
 
   const userName = Cookies.get('name');
   const logCookie = Cookies.get('logged');
@@ -47,9 +48,10 @@ export default function Header() {
   const [logged, setLogged] = useState(false);
 
   useEffect(() => {
+    console.log(name);
     if (logCookie === 'true') {
       setLogged(true);
-      setUsuario(`Olá, ${userName}`);
+      setUsuario(`Olá, ${name}`);
     }
   }, []);
 

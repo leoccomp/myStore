@@ -9,7 +9,7 @@ export const Container = styled.main`
   width: 100%;
   height: 100%;
 
-  margin-top: 190px;
+  margin-top: 170px;
 `;
 
 export const Overlay = styled.div`
@@ -26,9 +26,14 @@ export const Overlay = styled.div`
 `;
 
 export const Modal = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   background: var(--white);
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   padding: 2rem 2rem;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15);
@@ -36,13 +41,13 @@ export const Modal = styled.div`
   position: relative;
 
   header {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--green);
     background-size: contain;
   }
 
-  button {
+  > button {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem;
@@ -52,21 +57,91 @@ export const Modal = styled.div`
   }
 `;
 
+export const ImageDetail = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: ${px2vw(120, 320)};
+  height: ${px2vw(120, 320)};
+
+  > img {
+    max-width: ${px2vw(81, 320)};
+    max-height: ${px2vw(108, 320)};
+  }
+
+  @media (min-width: 768px) {
+    width: ${px2vw(500, 768)};
+    height: ${px2vw(400, 768)};
+
+    > img {
+      max-width: ${px2vw(350, 768)};
+      max-height: ${px2vw(400, 768)};
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(400)};
+    height: ${px2vw(300)};
+
+    > img {
+      max-width: ${px2vw(250)};
+      max-height: ${px2vw(280)};
+    }
+  }
+`;
+
+export const DescriptionDetail = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: ${px2vw(200, 320)};
+  height: ${px2vw(40, 320)};
+
+  font-size: ${px2vw(10, 320)};
+  font-style: normal;
+  font-weight: 400;
+  line-height: ${px2vw(12, 320)};
+  letter-spacing: 0;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    width: ${px2vw(192, 768)};
+    height: ${px2vw(40, 768)};
+
+    font-size: ${px2vw(10, 768)};
+    line-height: ${px2vw(12, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(600)};
+    height: ${px2vw(120)};
+
+    font-size: ${px2vw(16)};
+    line-height: ${px2vw(18)};
+  }
+`;
+
 export const ButtonLeft = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: 3%;
-  height: 30%;
+  width: 7%;
+  height: 70%;
   margin-right: 10px;
 
   background-color: var(--white);
 
   border: none;
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+
+  transition: opacity 0.2s;
+
+  :hover {
+    opacity: 0.7;
+  }
 `;
 
 export const ButtonRight = styled.button`
@@ -75,15 +150,20 @@ export const ButtonRight = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 3%;
-  height: 95%;
+  width: 7%;
+  height: 70%;
   margin-left: 10px;
 
   background-color: var(--white);
 
   border: none;
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+
+  transition: opacity 0.2s;
+
+  :hover {
+    opacity: 0.7;
+  }
 `;
 
 export const Product = styled.div`
@@ -140,7 +220,7 @@ export const CardItem = styled.button`
 
   @media (min-width: 1024px) {
     width: ${px2vw(238)};
-    height: ${px2vw(260)};
+    height: ${px2vw(300)};
   }
 `;
 

@@ -21,6 +21,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import * as UserActions from '../../store/modules/user/actions';
 
+import { useUser } from '../../context/user';
+
 import { Container, Form, Links } from './styles';
 
 const useStyles = makeStyles(theme => ({
@@ -46,6 +48,7 @@ const ColorButton = withStyles((theme: Theme) => ({
 
 export default function Login() {
   const users = useSelector(state => state.user);
+  const { name, setName } = useUser();
   const dispatch = useDispatch();
   const history = useHistory();
   const loading = false;
@@ -149,6 +152,8 @@ export default function Login() {
     // Cookies.set('password', passwordHash);
 
     const { customerName, email } = user;
+
+    setName(customerName);
 
     dispatch(
       UserActions.userRequest({

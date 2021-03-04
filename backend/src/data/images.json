@@ -1,0 +1,64 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "image_1": "/products/apple-watch_1.jpg",
+      "image_2": "/products/apple-watch_2.jpg",
+      "image_3": "/products/apple-watch_3.jpg"
+    },
+    {
+      "id": 2,
+      "image_1": "/products/jbl-pulse_1.jpg",
+      "image_2": "/products/jbl-pulse_2.jpg",
+      "image_3": "/products/jbl-pulse_3.jpg"
+    },
+    {
+      "id": 3,
+      "image_1": "/products/apple-iphone_1.jpg",
+      "image_2": "/products/apple-iphone_2.jpg",
+      "image_3": "/products/apple-iphone_3.jpg"
+    },
+    {
+      "id": 4,
+      "image_1": "/products/beats-headphones_1.jpeg",
+      "image_2": "/products/beats-headphones_2.jpeg",
+      "image_3": "/products/beats-headphones_3.jpeg"
+    },
+    {
+      "id": 5,
+      "image_1": "/products/apple-macbook-pro_1.jpg",
+      "image_2": "/products/apple-macbook-pro_2.jpg",
+      "image_3": "/products/apple-macbook-pro_3.jpg"
+    },
+    {
+      "id": 6,
+      "image_1": "/products/apple-ipad_1.jpeg",
+      "image_2": "/products/apple-ipad_2.jpeg",
+      "image_3": "/products/apple-ipad_3.jpeg"
+    },
+    {
+      "id": 7,
+      "image_1": "/products/apple-homepod_1.jpg",
+      "image_2": "/products/apple-homepod_2.jpg",
+      "image_3": "/products/apple-homepod_3.jpg"
+    },
+    {
+      "id": 8,
+      "image_1": "/products/jbuds-air-wireless_1.jpeg",
+      "image_2": "/products/jbuds-air-wireless_2.jpeg",
+      "image_3": "/products/jbuds-air-wireless_3.jpeg"
+    },
+    {
+      "id": 9,
+      "image_1": "/products/samsung-galaxy-s20_1.jpeg",
+      "image_2": "/products/samsung-galaxy-s20_2.jpeg",
+      "image_3": "/products/samsung-galaxy-s20_3.jpeg"
+    },
+    {
+      "id": 10,
+      "image_1": "/products/motorola-moto-g9-power_1.jpeg",
+      "image_2": "/products/motorola-moto-g9-power_2.jpeg",
+      "image_3": "/products/motorola-moto-g9-power_3.jpeg"
+    }
+  ]
+}
