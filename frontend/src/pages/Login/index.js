@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
-import Cookies from 'js-cookie';
 import bcrypt from 'bcryptjs';
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -20,8 +19,6 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import * as UserActions from '../../store/modules/user/actions';
-
-import { useUser } from '../../context/user';
 
 import { Container, Form, Links } from './styles';
 
@@ -48,7 +45,6 @@ const ColorButton = withStyles((theme: Theme) => ({
 
 export default function Login() {
   const users = useSelector(state => state.user);
-  const { name, setName } = useUser();
   const dispatch = useDispatch();
   const history = useHistory();
   const loading = false;
@@ -99,21 +95,6 @@ export default function Login() {
     } else {
       toast.error('Senha inválida!');
     }
-
-    // const cookieEmail = Cookies.get('email');
-    // const cookiePass = Cookies.get('password');
-
-    // const passCorrect = await bcrypt.compare(password, cookiePass);
-
-    // if (email === cookieEmail && passCorrect) {
-    //   Cookies.set('logged', 'true');
-    //   toast.success('Usuário autenticado com sucesso!');
-    //   history.push('/');
-    // } else {
-    //   toast.error('Usuário ou senha inválidos!');
-    // }
-
-    // dispatch(signInRequest(email, password));
   }
 
   async function handleCreate() {
@@ -147,13 +128,7 @@ export default function Login() {
 
     const passwordHash = await bcrypt.hash(user.password, 8);
 
-    // Cookies.set('name', user.customerName);
-    // Cookies.set('email', user.email);
-    // Cookies.set('password', passwordHash);
-
     const { customerName, email } = user;
-
-    setName(customerName);
 
     dispatch(
       UserActions.userRequest({

@@ -5,10 +5,7 @@ import { toast } from 'react-toastify';
 import { MdClose, MdSearch } from 'react-icons/md';
 import { FaShoppingCart } from 'react-icons/fa';
 
-import Cookies from 'js-cookie';
-
 import * as CartActions from '../../store/modules/cart/actions';
-import { useUser } from '../../context/user';
 
 import {
   Container,
@@ -39,21 +36,16 @@ export default function Header() {
   const cartSize = useSelector(state => state.cart.length);
   const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
   const history = useHistory();
-  const { name, setName } = useUser();
-
-  const userName = Cookies.get('name');
-  const logCookie = Cookies.get('logged');
 
   const [usuario, setUsuario] = useState('Olá, seja bem vindo!');
   const [logged, setLogged] = useState(false);
 
-  useEffect(() => {
-    console.log(name);
-    if (logCookie === 'true') {
-      setLogged(true);
-      setUsuario(`Olá, ${name}`);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (logCookie === 'true') {
+  //     setLogged(true);
+  //     setUsuario(`Olá, ${usuario}`);
+  //   }
+  // }, []);
 
   const total = useSelector(state =>
     state.cart.reduce((totalSum, product) => {
@@ -83,8 +75,6 @@ export default function Header() {
   };
 
   const handleExit = () => {
-    Cookies.set('logged', 'false');
-
     toast.success('Logout efetuado com sucesso!');
     history.push('/');
   };
