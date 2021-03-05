@@ -195,14 +195,12 @@ export const Product = styled.div`
   }
 `;
 
-export const CardItem = styled.button`
+export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border: none;
-
-  cursor: pointer;
 
   width: ${px2vw(210, 320)};
   height: ${px2vw(190, 320)};
@@ -255,6 +253,34 @@ export const ImageContainer = styled.div`
       max-width: ${px2vw(91)};
       max-height: ${px2vw(118)};
     }
+  }
+`;
+
+export const DetailButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--green);
+  color: var(--black);
+  border-radius: 8px;
+  border: none;
+
+  span {
+    font-size: 12px;
+  }
+
+  width: ${px2vw(190, 320)};
+  height: ${px2vw(38, 320)};
+
+  @media (min-width: 768px) {
+    width: ${px2vw(190, 768)};
+    height: ${px2vw(50, 768)};
+  }
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(100)};
+    height: ${px2vw(20)};
   }
 `;
 
@@ -364,7 +390,7 @@ export const Description = styled.span`
 
   @media (min-width: 1024px) {
     width: ${px2vw(192)};
-    height: ${px2vw(40)};
+    height: ${px2vw(50)};
 
     font-size: ${px2vw(10)};
     line-height: ${px2vw(12)};

@@ -24,6 +24,7 @@ import {
   Product,
   ButtonRight,
   CardItem,
+  DetailButton,
   DescAndPrice,
   Name,
   Description,
@@ -127,10 +128,13 @@ export default function Products() {
       ) : (
         <Product>
           {products.map(product => (
-            <CardItem key={product.id} onClick={() => handleDetails(product)}>
+            <CardItem key={product.id}>
               <ImageContainer>
                 <img src={`/products/${product.image}`} alt={product.title} />
               </ImageContainer>
+              <DetailButton onClick={() => handleDetails(product)}>
+                <span>detalhes</span>
+              </DetailButton>
               <DescAndPrice>
                 <Name>{product.name || <Skeleton />}</Name>
                 <Price>
