@@ -203,7 +203,7 @@ export const CardItem = styled.div`
   border: none;
 
   width: ${px2vw(210, 320)};
-  height: ${px2vw(190, 320)};
+  height: ${px2vw(290, 320)};
 
   background-color: var(--white);
 
@@ -213,7 +213,7 @@ export const CardItem = styled.div`
 
   @media (min-width: 768px) {
     width: ${px2vw(208, 768)};
-    height: ${px2vw(250, 768)};
+    height: ${px2vw(300, 768)};
   }
 
   @media (min-width: 1024px) {
@@ -228,11 +228,11 @@ export const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: ${px2vw(120, 320)};
-  height: ${px2vw(120, 320)};
+  height: ${px2vw(100, 320)};
 
   > img {
     max-width: ${px2vw(81, 320)};
-    max-height: ${px2vw(108, 320)};
+    max-height: ${px2vw(98, 320)};
   }
 
   @media (min-width: 768px) {
@@ -270,12 +270,12 @@ export const DetailButton = styled.button`
     font-size: 12px;
   }
 
-  width: ${px2vw(190, 320)};
-  height: ${px2vw(38, 320)};
+  width: ${px2vw(80, 320)};
+  height: ${px2vw(15, 320)};
 
   @media (min-width: 768px) {
-    width: ${px2vw(190, 768)};
-    height: ${px2vw(50, 768)};
+    width: ${px2vw(100, 768)};
+    height: ${px2vw(20, 768)};
   }
 
   @media (min-width: 1024px) {
@@ -370,10 +370,13 @@ export const Price = styled.div`
 `;
 
 export const Description = styled.span`
-  width: ${px2vw(200, 320)};
-  height: ${px2vw(40, 320)};
+  display: flex;
+  align-items: center;
 
-  font-size: ${px2vw(10, 320)};
+  width: ${px2vw(200, 320)};
+  height: ${px2vw(50, 320)};
+
+  font-size: ${px2vw(9, 320)};
   font-style: normal;
   font-weight: 400;
   line-height: ${px2vw(12, 320)};
@@ -382,9 +385,9 @@ export const Description = styled.span`
 
   @media (min-width: 768px) {
     width: ${px2vw(192, 768)};
-    height: ${px2vw(40, 768)};
+    height: ${px2vw(60, 768)};
 
-    font-size: ${px2vw(10, 768)};
+    font-size: ${px2vw(9, 768)};
     line-height: ${px2vw(12, 768)};
   }
 
@@ -404,6 +407,7 @@ export const Button = styled.button`
 
   width: ${px2vw(210, 320)};
   height: ${px2vw(32, 320)};
+  font-size: ${px2vw(12, 320)};
 
   background: var(--green);
   color: var(--black);
@@ -411,7 +415,7 @@ export const Button = styled.button`
   border: none;
 
   > svg {
-    margin-right: ${px2vw(15, 320)};
+    margin-right: ${px2vw(20, 320)};
   }
 
   &:hover {
@@ -421,6 +425,7 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     width: ${px2vw(208, 768)};
     height: ${px2vw(32, 768)};
+    font-size: ${px2vw(14, 768)};
 
     > svg {
       margin-right: ${px2vw(15, 768)};
@@ -430,6 +435,7 @@ export const Button = styled.button`
   @media (min-width: 1024px) {
     width: ${px2vw(238)};
     height: ${px2vw(32)};
+    font-size: ${px2vw(14)};
 
     > svg {
       margin-right: ${px2vw(15)};
