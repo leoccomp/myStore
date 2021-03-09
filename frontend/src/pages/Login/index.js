@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -21,6 +21,7 @@ import Typography from '@material-ui/core/Typography';
 import * as UserActions from '../../store/modules/user/actions';
 
 import { Container, Form, Links } from './styles';
+import { UserContext } from '../../context/user';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -57,9 +58,11 @@ export default function Login() {
   });
   const [login, setLogin] = useState({
     login: false,
+    name: '',
     email: '',
     password: ''
   });
+  const { setName, setLogged } = useContext(UserContext);
 
   async function handleLogin() {
     const { email, password } = login;
@@ -79,6 +82,8 @@ export default function Login() {
       if (item.email === email) {
         userExist = true;
         passwordStored = item.password;
+        setName(`Olá, ${item.name}`);
+        setLogged(true);
       }
     });
 

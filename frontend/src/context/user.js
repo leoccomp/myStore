@@ -1,25 +1,23 @@
-import React, { createContext, useState, useContext } from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React, { createContext, useState } from 'react';
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
-export const UserProvider = props => {
-  const [name, setName] = useState('Leonardo Vieira');
+export default function UserProvider({ children }) {
+  const [name, setName] = useState('Olá, seja bem vindo!');
+  const [logged, setLogged] = useState(false);
 
   return (
     <UserContext.Provider
       value={{
         name,
-        setName
+        setName,
+        logged,
+        setLogged
       }}
     >
-      {props.children}
+      {children}
     </UserContext.Provider>
   );
-};
-
-export function useUser() {
-  const context = useContext(UserContext);
-  if (!context) throw new Error('useUser must be used within a UserProvider');
-  const { name, setName } = context;
-  return { name, setName };
 }

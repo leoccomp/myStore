@@ -679,12 +679,29 @@ export const ButtonFinish = styled.button`
   }
 `;
 
+export const Profile = styled.div`
+  display: flex;
+
+  margin-right: 10px;
+  padding: 0 10px;
+
+  border-right: 1px solid var(--black);
+
+  strong {
+    display: block;
+    color: var(--black);
+  }
+
+  svg {
+    margin-right: 20px;
+  }
+`;
+
 export const Login = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
-  /* border-right: 1px solid var(--black); */
 
   &:hover {
     opacity: 0.7;
@@ -740,21 +757,6 @@ export const Login = styled(Link)`
   }
 `;
 
-export const Profile = styled.div`
-  display: flex;
-
-  margin-right: 10px;
-
-  strong {
-    display: block;
-    color: var(--black);
-  }
-
-  svg {
-    margin-right: 20px;
-  }
-`;
-
 export const LinkProfile = styled.a`
   font-size: ${px2vw(5, 320)};
   text-decoration: none;
@@ -783,15 +785,14 @@ export const Exit = styled.button`
   transition: opacity 0.2s;
   background-color: var(--black);
   color: var(--green);
-  font-size: ${px2vw(10, 320)};
+  font-size: ${px2vw(5, 320)};
   font-weight: bold;
   border: none;
   border-radius: 50%;
 
-  width: ${px2vw(40, 320)};
-  height: ${px2vw(20, 320)};
-  margin-right: ${px2vw(10, 320)};
-  margin-top: ${px2vw(10, 320)};
+  width: ${px2vw(15, 320)};
+  height: ${px2vw(15, 320)};
+  margin-right: ${px2vw(5, 320)};
 
   &:hover {
     opacity: 0.7;
@@ -806,18 +807,17 @@ export const Exit = styled.button`
   }
 
   @media (min-width: 768px) {
-    width: ${px2vw(40, 768)};
-    height: ${px2vw(20, 768)};
+    width: ${px2vw(25, 768)};
+    height: ${px2vw(25, 768)};
     margin-right: ${px2vw(10, 768)};
-    margin-top: ${px2vw(10, 768)};
-    font-size: ${px2vw(10, 768)};
+    font-size: ${px2vw(8, 768)};
   }
 
   @media (min-width: 1024px) {
     width: ${px2vw(30)};
     height: ${px2vw(30)};
     margin-right: ${px2vw(10)};
-    margin-top: ${px2vw(10)};
+    margin-top: ${px2vw(8)};
     font-size: ${px2vw(10)};
   }
 `;

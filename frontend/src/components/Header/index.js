@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -6,6 +6,8 @@ import { MdClose, MdSearch } from 'react-icons/md';
 import { FaShoppingCart } from 'react-icons/fa';
 
 import * as CartActions from '../../store/modules/cart/actions';
+
+import { UserContext } from '../../context/user';
 
 import {
   Container,
@@ -37,15 +39,7 @@ export default function Header() {
   const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
   const history = useHistory();
 
-  const [usuario, setUsuario] = useState('Olá, seja bem vindo!');
-  const [logged, setLogged] = useState(false);
-
-  // useEffect(() => {
-  //   if (logCookie === 'true') {
-  //     setLogged(true);
-  //     setUsuario(`Olá, ${usuario}`);
-  //   }
-  // }, []);
+  const { name, setName, logged, setLogged } = useContext(UserContext);
 
   const total = useSelector(state =>
     state.cart.reduce((totalSum, product) => {
@@ -76,6 +70,8 @@ export default function Header() {
 
   const handleExit = () => {
     toast.success('Logout efetuado com sucesso!');
+    setName('Olá, seja bem vindo!');
+    setLogged(false);
     history.push('/');
   };
 
@@ -98,7 +94,7 @@ export default function Header() {
         <Profile>
           <Login to={!logged ? '/login' : '/profile'}>
             <div>
-              <strong>{usuario}</strong>
+              <strong>{name}</strong>
               <>
                 {logged ? (
                   <LinkProfile nohref>Meu Perfil</LinkProfile>
