@@ -9,7 +9,7 @@ export const Container = styled.main`
   width: 100%;
   height: 100%;
 
-  margin-top: 170px;
+  margin-top: 120px;
 `;
 
 export const Overlay = styled.div`
@@ -172,7 +172,7 @@ export const Product = styled.div`
   grid-gap: ${px2vw(20, 320)};
   padding: 0 ${px2vw(10, 320)};
 
-  height: 95%;
+  height: 97%;
 
   overflow-y: scroll;
   scrollbar-width: none;

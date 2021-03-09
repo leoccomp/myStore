@@ -242,9 +242,9 @@ export const CartMenu = styled.nav`
 
   top: 0;
   width: ${px2vw(180, 320)};
-  height: calc(100vh - 94px);
+  height: calc(100vh - 22px);
   margin-left: ${px2vw(140, 320)};
-  margin-top: ${px2vw(32, 320)};
+  /* margin-top: ${px2vw(32, 320)}; */
 
   background: var(--green);
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
@@ -263,7 +263,7 @@ export const CartMenu = styled.nav`
   @media (min-width: 1024px) {
     width: ${px2vw(486)};
     margin-left: ${px2vw(953)};
-    margin-top: ${px2vw(66)};
+    margin-top: ${px2vw(0)};
   }
 `;
 

@@ -43,10 +43,10 @@ export default function Home() {
   return (
     <Container>
       {/* <Header /> */}
-      <Sections />
+      {/* <Sections /> */}
       {/* <LocationBar /> */}
       <Main>
-        {/* <Filters /> */}
+        <Filters />
         <Products />
       </Main>
       {/* <Footer /> */}

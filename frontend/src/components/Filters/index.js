@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 
 import Slider from 'rc-slider';
 
+import { GiSmartphone, GiSpeaker, GiHeadphones } from 'react-icons/gi';
+import { CgAppleWatch } from 'react-icons/cg';
+import { MdLaptopWindows } from 'react-icons/md';
+import { RiFilterOffLine } from 'react-icons/ri';
+
 import { Container, PriceRange } from './styles';
 
 const { createSliderWithTooltip } = Slider;
@@ -14,7 +19,51 @@ export default function Filters() {
 
   return (
     <Container>
-      <PriceRange>
+      <input type="checkbox" id="menu" />
+      <label htmlFor="menu" className="icon">
+        <div className="menu" />
+      </label>
+      <nav>
+        <ul>
+          <li>
+            <i className="material-icons">
+              <RiFilterOffLine size={25} />
+            </i>
+            Todos
+          </li>
+          <li>
+            <i className="material-icons">
+              <GiSmartphone size={25} />
+            </i>
+            Smartphones
+          </li>
+          <li>
+            <i className="material-icons">
+              <CgAppleWatch size={25} />
+            </i>
+            Smartwatchs
+          </li>
+          <li>
+            <i className="material-icons">
+              <GiSpeaker size={25} />
+            </i>
+            Audio
+          </li>
+          <li>
+            <i className="material-icons">
+              <MdLaptopWindows size={25} />
+            </i>
+            Notebooks
+          </li>
+          <li>
+            <i className="material-icons">
+              <GiHeadphones size={25} />
+            </i>
+            Headphones
+          </li>
+        </ul>
+      </nav>
+      {/* <PriceRange>
         <strong>Faixa de preço</strong>
         <div className="group-input">
           <div className="form-group">
@@ -50,7 +99,7 @@ export default function Filters() {
           className="sliderArea"
           onChange={value => setValues(value)}
         />
-      </PriceRange>
+      </PriceRange> */}
     </Container>
   );
 }
