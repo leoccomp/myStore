@@ -8,7 +8,7 @@
         "manufacturer": "Apple",
         "manufacturer_link": "https://www.apple.com/br/apple-watch-series-3/",
         "image": "apple-watch_1.jpg",
-        "categoty": "Smartwatch",
+        "category": "Smartwatch",
         "price": 399
       },
       {
@@ -19,7 +19,7 @@
         "manufacturer": "JBL",
         "manufacturer_link": "https://www.jbl.com.br/caixas-de-som/JBL+PULSE+4.html?gclid=EAIaIQobChMIlcfispSX7wIViIaRCh2-UAuBEAAYASAAEgI2xPD_BwE",
         "image": "jbl-pulse_1.jpg",
-        "categoty": "Audio",
+        "category": "Audio",
         "price": 299
       },
       {
@@ -30,7 +30,7 @@
         "manufacturer": "Apple",
         "manufacturer_link": "https://www.apple.com/br/shop/buy-iphone/iphone-xr/tela-de-6,1-polegadas-128gb-branco",
         "image": "apple-iphone_1.jpg",
-        "categoty": "Smartphone",
+        "category": "Smartphone",
         "price": 1299
       },
       {
@@ -41,7 +41,7 @@
         "manufacturer": "Beats",
         "manufacturer_link": "https://www.beatsbydre.com/br/headphones/solo3-wireless",
         "image": "beats-headphones_1.jpeg",
-        "categoty": "Headphone",
+        "category": "Headphone",
         "price": 679
       },
       {
@@ -52,7 +52,7 @@
         "manufacturer": "Apple",
         "manufacturer_link": "https://www.apple.com/br/macbook-pro/?afid=p238%7Cs3DnSiAiU-dc_mtid_1870765e38482_pcrid_485828471485_pgrid_17049238738_&cid=aos-br-kwgo-mac--slid---product-",
         "image": "apple-macbook-pro_1.jpg",
-        "categoty": "Notebook",
+        "category": "Notebook",
         "price": 12459
       },
       {
@@ -63,7 +63,7 @@
         "manufacturer": "Apple",
         "manufacturer_link": "https://www.iplace.com.br/ipad/novo-ipad-pro/cat115301690?gclid=EAIaIQobChMIz5Cik52X7wIVSgiRCh3MLgjgEAAYASAAEgIsA_D_BwE",
         "image": "apple-ipad_1.jpeg",
-        "categoty": "Tablet",
+        "category": "Tablet",
         "price": 19999
       },
       {
@@ -74,7 +74,7 @@
         "manufacturer": "Apple",
         "manufacturer_link": "https://www.apple.com/homepod/",
         "image": "apple-homepod_1.jpg",
-        "categoty": "Audio",
+        "category": "Audio",
         "price": 5999
       },
       {
@@ -85,7 +85,7 @@
         "manufacturer": "JLAB",
         "manufacturer_link": "https://www.jlab.com/products/jbuds-air-true-wireless-earbuds-charging-case",
         "image": "jbuds-air-wireless_1.jpeg",
-        "categoty": "Audio",
+        "category": "Audio",
         "price": 3249
       },
       {
@@ -96,7 +96,7 @@
         "manufacturer": "Samsung",
         "manufacturer_link": "https://www.samsung.com/br/smartphones/galaxy-s20/galaxy-s20-fe/",
         "image": "samsung-galaxy-s20_1.jpeg",
-        "categoty": "Smartphone",
+        "category": "Smartphone",
         "price": 2899
       },
       {
@@ -107,7 +107,7 @@
         "manufacturer": "Motorola",
         "manufacturer_link": "https://www.motorola.com.br/smartphone-moto-g9-power/p",
         "image": "motorola-moto-g9-power_1.jpeg",
-        "categoty": "Smartphone",
+        "category": "Smartphone",
         "price": 2529
       }
     ]

@@ -166,13 +166,25 @@ export const ButtonRight = styled.button`
   }
 `;
 
+export const MainArea = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > span {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 12px;
+  }
+
+  height: 100%;
+`;
+
 export const Product = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: ${px2vw(20, 320)};
   padding: 0 ${px2vw(10, 320)};
-
-  height: 97%;
 
   overflow-y: scroll;
   scrollbar-width: none;

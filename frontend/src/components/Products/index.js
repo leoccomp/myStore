@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import {
@@ -21,6 +21,7 @@ import {
   ImageDetail,
   DescriptionDetail,
   ButtonLeft,
+  MainArea,
   Product,
   ButtonRight,
   CardItem,
@@ -32,6 +33,7 @@ import {
   Button,
   ImageContainer
 } from './styles';
+import { UserContext } from '../../context/user';
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -40,22 +42,33 @@ export default function Products() {
   const [imageIndex, setImageIndex] = useState(0);
   const [isModalDetailOpen, setIsModalDetailOpen] = useState(false);
 
+  const { section } = useContext(UserContext);
+
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function loadProducts() {
-      const response = await api.get('products');
+  async function loadProducts(filter) {
+    const response = await api.get('products');
 
-      const data = response.data.products.map(product => ({
-        ...product,
-        priceFormatted: formatPrice(product.price)
-      }));
+    const data = response.data.products.map(product => ({
+      ...product,
+      priceFormatted: formatPrice(product.price)
+    }));
 
+    if (filter !== '') {
+      const dataFiltered = data.filter(item => item.category === filter);
+      setProducts(dataFiltered);
+    } else {
       setProducts(data);
     }
+  }
 
-    loadProducts();
+  useEffect(() => {
+    loadProducts('');
   }, []);
+
+  useEffect(() => {
+    loadProducts(section);
+  }, [section]);
 
   function handleAddProduct(id) {
     dispatch(CartActions.addToCartRequest(id));
@@ -126,34 +139,37 @@ export default function Products() {
           </Modal>
         </Overlay>
       ) : (
-        <Product>
-          {products.map(product => (
-            <CardItem key={product.id}>
-              <ImageContainer>
-                <img src={`/products/${product.image}`} alt={product.title} />
-              </ImageContainer>
-              <DetailButton onClick={() => handleDetails(product)}>
-                <span>detalhes</span>
-              </DetailButton>
-              <DescAndPrice>
-                <Name>{product.name || <Skeleton />}</Name>
-                <Price>
-                  <span>{`R$${product.price}` || <Skeleton />}</span>
-                </Price>
-              </DescAndPrice>
-              <Description>
-                {product.short_description || <Skeleton />}
-              </Description>
-              <Button
-                type="button"
-                onClick={() => handleAddProduct(product.id)}
-              >
-                <MdAddShoppingCart size={16} color="#000000" />
-                <span>Comprar</span>
-              </Button>
-            </CardItem>
-          ))}
-        </Product>
+        <MainArea>
+          <span>Filtro: {section === '' ? 'Sem filtro' : section}</span>
+          <Product>
+            {products.map(product => (
+              <CardItem key={product.id}>
+                <ImageContainer>
+                  <img src={`/products/${product.image}`} alt={product.title} />
+                </ImageContainer>
+                <DetailButton onClick={() => handleDetails(product)}>
+                  <span>detalhes</span>
+                </DetailButton>
+                <DescAndPrice>
+                  <Name>{product.name || <Skeleton />}</Name>
+                  <Price>
+                    <span>{`R$${product.price}` || <Skeleton />}</span>
+                  </Price>
+                </DescAndPrice>
+                <Description>
+                  {product.short_description || <Skeleton />}
+                </Description>
+                <Button
+                  type="button"
+                  onClick={() => handleAddProduct(product.id)}
+                >
+                  <MdAddShoppingCart size={16} color="#000000" />
+                  <span>Comprar</span>
+                </Button>
+              </CardItem>
+            ))}
+          </Product>
+        </MainArea>
       )}
       {/* <ButtonRight>
         <MdKeyboardArrowRight size={40} />

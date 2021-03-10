@@ -7,6 +7,7 @@ export const UserContext = createContext();
 export default function UserProvider({ children }) {
   const [name, setName] = useState('Olá, seja bem vindo!');
   const [logged, setLogged] = useState(false);
+  const [section, setSection] = useState('');
 
   return (
     <UserContext.Provider
@@ -14,7 +15,9 @@ export default function UserProvider({ children }) {
         name,
         setName,
         logged,
-        setLogged
+        setLogged,
+        section,
+        setSection
       }}
     >
       {children}

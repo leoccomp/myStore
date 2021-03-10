@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Slider from 'rc-slider';
 
@@ -8,14 +8,17 @@ import { MdLaptopWindows } from 'react-icons/md';
 import { RiFilterOffLine } from 'react-icons/ri';
 
 import { Container, PriceRange } from './styles';
+import { UserContext } from '../../context/user';
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
 
 export default function Filters() {
-  const [min, setMin] = useState(100);
-  const [max, setMax] = useState(2000);
-  const [values, setValues] = useState([min, max]);
+  const { setSection } = useContext(UserContext);
+
+  async function handleFilter(type) {
+    setSection(type);
+  }
 
   return (
     <Container>
@@ -25,37 +28,37 @@ export default function Filters() {
       </label>
       <nav>
         <ul>
-          <li>
+          <li onClick={() => handleFilter('')}>
             <i className="material-icons">
               <RiFilterOffLine size={25} />
             </i>
-            Todos
+            Sem filtro
           </li>
-          <li>
+          <li onClick={() => handleFilter('Smartphone')}>
             <i className="material-icons">
               <GiSmartphone size={25} />
             </i>
             Smartphones
           </li>
-          <li>
+          <li onClick={() => handleFilter('Smartwatch')}>
             <i className="material-icons">
               <CgAppleWatch size={25} />
             </i>
             Smartwatchs
           </li>
-          <li>
+          <li onClick={() => handleFilter('Audio')}>
             <i className="material-icons">
               <GiSpeaker size={25} />
             </i>
             Audio
           </li>
-          <li>
+          <li onClick={() => handleFilter('Notebook')}>
             <i className="material-icons">
               <MdLaptopWindows size={25} />
             </i>
             Notebooks
           </li>
-          <li>
+          <li onClick={() => handleFilter('Headphone')}>
             <i className="material-icons">
               <GiHeadphones size={25} />
             </i>
@@ -63,6 +66,10 @@ export default function Filters() {
           </li>
         </ul>
       </nav>
+
+      {/* const [min, setMin] = useState(100);
+      const [max, setMax] = useState(2000);
+      const [values, setValues] = useState([min, max]); */}
       {/* <PriceRange>
         <strong>Faixa de preço</strong>
         <div className="group-input">
