@@ -28,7 +28,7 @@ export const Container = styled.header`
   position: fixed;
   top: 0;
 
-  form {
+  /* form {
     position: relative;
     width: ${px2vw(90, 320)};
     background: var(--white);
@@ -114,7 +114,7 @@ export const Container = styled.header`
         width: ${px2vw(50)};
       }
     }
-  }
+  } */
 
   @media (min-width: 768px) {
   }
@@ -174,6 +174,37 @@ export const LinkLogo = styled.a`
 
   @media (min-width: 1024px) {
     margin-left: ${px2vw(67)};
+  }
+`;
+
+export const Search = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 40px;
+
+  > input {
+    width: 90%;
+    border-radius: 16px 0 0 16px;
+    padding: 0 1rem;
+    height: ${px2vw(27)};
+    font-size: ${px2vw(12)};
+  }
+
+  button {
+    border: none;
+    font-weight: bold;
+    background: #57bd84;
+    height: ${px2vw(27)};
+    font-size: ${px2vw(12)};
+    width: ${px2vw(50)};
+
+    :last-child {
+      border-radius: 0 16px 16px 0;
+      border-left: 1px solid var(--light-gray);
+    }
   }
 `;
 

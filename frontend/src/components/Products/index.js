@@ -42,7 +42,7 @@ export default function Products() {
   const [imageIndex, setImageIndex] = useState(0);
   const [isModalDetailOpen, setIsModalDetailOpen] = useState(false);
 
-  const { section } = useContext(UserContext);
+  const { section, search } = useContext(UserContext);
 
   const dispatch = useDispatch();
 
@@ -69,6 +69,24 @@ export default function Products() {
   useEffect(() => {
     loadProducts(section);
   }, [section]);
+
+  useEffect(() => {
+    async function searchProducts() {
+      const response = await api.get('products');
+
+      const data = response.data.products.map(product => ({
+        ...product,
+        priceFormatted: formatPrice(product.price)
+      }));
+
+      const dataFiltered = data.filter(item =>
+        item.short_description.includes(search)
+      );
+      setProducts(dataFiltered);
+    }
+
+    searchProducts();
+  }, [search]);
 
   function handleAddProduct(id) {
     dispatch(CartActions.addToCartRequest(id));

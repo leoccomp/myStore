@@ -14,6 +14,7 @@ import {
   LeftSide,
   RightSide,
   LinkLogo,
+  Search,
   Cart,
   CartMenu,
   CartHeader,
@@ -39,7 +40,10 @@ export default function Header() {
   const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
   const history = useHistory();
 
-  const { name, setName, logged, setLogged } = useContext(UserContext);
+  const [textSearch, setTextSearch] = useState('');
+  const { name, setName, logged, setLogged, setSearch } = useContext(
+    UserContext
+  );
 
   const total = useSelector(state =>
     state.cart.reduce((totalSum, product) => {
@@ -75,6 +79,15 @@ export default function Header() {
     history.push('/');
   };
 
+  function handleSearch() {
+    setSearch(textSearch);
+  }
+
+  function handleClear() {
+    setSearch('');
+    setTextSearch('');
+  }
+
   return (
     <Container>
       <LeftSide>
@@ -82,13 +95,34 @@ export default function Header() {
           <strong>my_</strong>
           <span>store</span>
         </LinkLogo>
-        <form onSubmit="event.preventDefault();" role="search">
-          <label htmlFor="search">Search for stuff</label>
-          <input id="search" type="search" placeholder="Busca rápida..." />
-          <button type="submit">
+        <Search>
+          <input
+            id="search"
+            type="search"
+            placeholder="Busca rápida..."
+            value={textSearch}
+            onChange={e => setTextSearch(e.target.value)}
+          />
+          <button type="button" onClick={handleSearch}>
             <MdSearch size={18} />
           </button>
-        </form>
+          <button type="button" onClick={handleClear}>
+            <MdClose size={18} />
+          </button>
+        </Search>
+        {/* <form onSubmit={e => e.preventDefault()} role="search">
+          <label htmlFor="search">Search for stuff</label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Busca rápida..."
+            value={textSearch}
+            onChange={e => setTextSearch(e.target.value)}
+          />
+          <button type="submit" onClick={handleSearch}>
+            <MdSearch size={18} />
+          </button>
+        </form> */}
       </LeftSide>
       <RightSide>
         <Profile>
